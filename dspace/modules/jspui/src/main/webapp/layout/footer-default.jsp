@@ -39,7 +39,7 @@
 </main>
             <%-- Page footer --%>
              <footer class="navbar navbar-inverse navbar-bottom">
-             <div id="designedby" class="container text-muted">
+             <div id="designedby" class="container text-muted footerContainer">
              <!--<fmt:message key="jsp.layout.footer-default.theme-by"/> -->
                  <a id="logoFooter" href="http://www.uao.edu.co"><img src="<%= request.getContextPath() %>/image/uaologo.svg"  alt="Universidad Autónoma de Occidente" /></a>
                  <div class="footerBox">Cll 25# 115-85</br>

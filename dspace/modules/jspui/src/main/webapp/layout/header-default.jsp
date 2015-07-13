@@ -51,7 +51,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
-            <link href='http://fonts.googleapis.com/css?family=Cabin|Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+           <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400italic' rel='stylesheet' type='text/css'>
         <!--<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />-->
                <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-cit.css" type="text/css" />
         <!--<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />  DESCOMENTA MINIMIZADO PARA PRODUCCIÓN -->
@@ -118,7 +119,7 @@
             <div class="container">
                 <dspace:include page="<%= navbar %>" />
             </div>
-
+        
 <%
     }
     else
@@ -131,20 +132,10 @@
     }
 %>
 </header>
+    
 
 <main id="content" role="main">
-<div class="container banner">
-    <div class="row">
-        <div class="col-md-9 brand">
-            <!--<h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
-            <fmt:message key="jsp.layout.header-default.brand.description" />  -->
-            <img width="100%" src='<%= request.getContextPath() %>/image/mainImg.svg'/>
-        </div>
-        <div class="col-md-3" id="anosLogo"><img style="position:relative; top:46px;" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
-        </div>
-    </div>
-</div>
-<br/>
+ 
                 <%-- Location bar --%>
 <%
     if (locbar)
@@ -156,10 +147,13 @@
 <%
     }
 %>
+	
+
+<br/>
 
 
         <%-- Page contents --%>
-<div class="container">
+<div class="container" >
 <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
     <div class="row">
     <div class="col-md-9">

@@ -16,7 +16,7 @@
 ol.breadcrumb li {color: white; font-style: italic;}
 ol.breadcrumb li a {color: white; font-weight: bold; font-style: normal;}
 body.undernavigation {overflow-x: hidden; padding-top: 120px;} /****************/
-#content {padding-bottom:60px;}
+#content {padding-bottom:212px;}
 #designedby {padding: 5px;}
 #footer_feedback {margin: 0 auto; max-width: 416px; color:#606060 !important; font-size: 10px; padding-top: 12px; margin-top:10px;}
 input[type="file"] {display: block;height: auto;}

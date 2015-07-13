@@ -155,7 +155,7 @@
     if (user != null)
     {
 		%>
-		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
+		<a href="#" class="dropdown-toggle cabin" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
 		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 20) %></fmt:param>
 		  </fmt:message> <b class="caret"></b></a>
 		<%
@@ -209,9 +209,9 @@
      <ul class="nav navbar-nav" id="browseBtn">
                <!-- BROWSE ! -->   
            <li class="dropdown" >
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#fff"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> C&C<!--<b class="caret"></b>--><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
+             <a href="#" class="dropdown-toggle cabin" data-toggle="dropdown" style="color:#fff"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> <b>Communities</b>&<b>Colections</b><!--<b class="caret"></b>--><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
                
-             <ul class="dropdown-menu" style="top:123%; left:-138px;">
+             <ul class="dropdown-menu" style="top:123%; right:0px;">
                <li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li>
 				<li class="divider"></li>
         <li class="dropdown-header"><fmt:message key="jsp.layout.navbar-default.browseitemsby"/></li>
