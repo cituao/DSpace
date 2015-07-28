@@ -41,15 +41,16 @@
              <footer class="navbar navbar-inverse navbar-bottom">
              <div id="designedby" class="container text-muted footerContainer">
              <!--<fmt:message key="jsp.layout.footer-default.theme-by"/> -->
-                 <a id="logoFooter" href="http://www.uao.edu.co"><img src="<%= request.getContextPath() %>/image/uaologo.svg"  alt="Universidad Autónoma de Occidente" /></a>
+                 <div class="footerBox"><a id="logoFooter" href="http://www.uao.edu.co"><img src="<%= request.getContextPath() %>/image/uaologo.svg"  alt="Universidad Autónoma de Occidente" /></a></div>
                  <div class="footerBox">Cll 25# 115-85</br>
 Km 2 vía Cali-Jamundí</br>
 Cali, Colombia</div>
                   <div class="footerBox">buzon@uao.edu.co<br>
-www.uao.edu.co</div>
-                <div class="footerBox">PBX:+57 2 318 8000 <br>
-Línea Gratuita: 01 800091 34 35</div>
-                <div class="social">
+www.uao.edu.co<br>
+                PBX:+57 2 318 8000 <br>
+01 800091 34 35</div>
+            
+                <div class="footerBox" style="border:none">
                 <a href=""><img class="socialIcon" src="<%= request.getContextPath() %>/image/facebook.svg" /></a>
                     <a href=""><img class="socialIcon" src="<%= request.getContextPath() %>/image/twitter.svg" /></a>
                    <a href=""> <img class="socialIcon" src="<%= request.getContextPath() %>/image/youtube.svg" /></a>
