@@ -688,11 +688,11 @@ else
              
                  if(b == 'tlocation'){ 
                      p.x= p.x + qw + 25;
-                     p.y= p.y - 113;  
+                     p.y= p.y - 115;  
                  }
 
                  if(b == 'newSearch'){ 
-                     p.x= p.x + qw -23 ;
+                     p.x= p.x + qw -28 ;
                      p.y= p.y - 103;  
                  }
 

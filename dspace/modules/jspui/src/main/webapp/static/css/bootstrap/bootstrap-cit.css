@@ -32,6 +32,11 @@ font-family: 'Cabin', sans-serif;
     transition: width 2s;
 }
 
+.fadeBackground{
+-webkit-transition: background-color 0.5s ease;
+transition:background-color 0.5s ease;
+}
+
 .footerContainer{
 display: flex;
     flex-flow: row wrap;
@@ -4825,12 +4830,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
     .discovery-pagination-controls{
 
-width:59%;
+width:63%;
   
 }
     
     .discovery-search-filters{
-  width: 41%;
+  width: 36%;
  padding-bottom: 5px !important;
     border-right: 1px solid #DDDDDD;
     border-bottom: none;
@@ -4849,7 +4854,7 @@ width:59%;
     }
     
      #filtername{     
-margin-left: -10px;
+margin-left: 0px;
 }
          #filterquery{     
 width: 146px;
@@ -5218,10 +5223,10 @@ margin-left: 58px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #1b1e23;
-
-    
-   
+  color: #1b1e23; 
+}
+#loggedUser:hover{
+background-color: #e12021;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -6053,13 +6058,14 @@ a.list-group-item:focus {
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 0px;
     
 }
 
 .login-body {
   padding: 0;
     position: relative;
+    margin: 0 auto;
  
     
 }
@@ -7379,11 +7385,11 @@ td.hidden-sm {
   }
     /* LOGIN */
 
-#loginContainer{
-width: 54%;
-   
-
+#loginContainer{      
+display: flex;
+flex-flow: row wrap;
 }
+    
 #loginform{
    width: 424px;
     padding: 25px;
