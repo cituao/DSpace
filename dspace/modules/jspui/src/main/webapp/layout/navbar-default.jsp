@@ -155,8 +155,8 @@
     if (user != null)
     {
 		%>
-		<a href="#" class="dropdown-toggle cabin" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
-		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 20) %></fmt:param>
+		<a href="#" class="dropdown-toggle cabin fadeBackground" id="loggedUser" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
+		      <fmt:param><b><%= StringUtils.abbreviate(navbarEmail, 20) %></b></fmt:param>
 		  </fmt:message> <b class="caret"></b></a>
 		<%
     } else {
@@ -192,7 +192,7 @@
                 <div class="container">
 	<form method="get" action="<%= request.getContextPath() %>/simple-search" class="navbar-form">
 	    <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="navSearchBarBtn"><img src="<%= request.getContextPath() %>/image/searchIcon.svg" onerror="this.onerror=null; this.src='<%= request.getContextPath() %>/image/searchIcon.png'"/><!--<span class="glyphicon glyphicon-search"></span>--> </button>
+              <button type="submit" class="btn btn-primary fadeBackground" id="navSearchBarBtn"><img src="<%= request.getContextPath() %>/image/searchIcon.svg" onerror="this.onerror=null; this.src='<%= request.getContextPath() %>/image/searchIcon.png'"/><!--<span class="glyphicon glyphicon-search"></span>--> </button>
           <input type="text" class="form-control" id="navSearchBar" placeholder="<fmt:message key="jsp.layout.navbar-default.search"/>" name="query" id="tequery" size="25"/>
         </div>
       

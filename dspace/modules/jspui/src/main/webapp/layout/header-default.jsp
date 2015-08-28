@@ -51,8 +51,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon"/>
         <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
-           <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Noto+Serif:700italic' rel='stylesheet' type='text/css'>
         <!--<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />-->
                <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-cit.css" type="text/css" />
         <!--<link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />  DESCOMENTA MINIMIZADO PARA PRODUCCIÓN -->
@@ -156,5 +157,6 @@
 <div class="container" >
 <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
     <div class="row">
-    <div class="col-md-9">
+       <!-- <div class="col-md-9">   ANTERIOR! -->
+    <div>
 <% } %>	

@@ -72,7 +72,7 @@
             <fmt:message key="jsp.layout.header-default.brand.description" />  -->
             <img width="100%" src='<%= request.getContextPath() %>/image/mainImg.svg'/>
         </div>
-        <div class="col-md-3" id="anosLogo"><img style="position:relative; top:46px;" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
+        <div class="col-md-3" id="anosLogo"><img width="100%" style="position:relative; top:46px;" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
         </div>
     </div>
 </div>
@@ -167,37 +167,42 @@ if (submissions != null && submissions.count() > 0)
 <%
 }
 %>
-<div class="col-md-4">
+<!--<div class="col-md-4">
     <%= sideNews %>
+</div>-->
+    <br>
+    <br>
+    <br>
 </div>
-</div>
-<div class="container row">
+<div class="listContainer container row">
 <%
 if (communities != null && communities.length != 0)
 {
 %>
-	<div class="col-md-4">		
-               <h3><fmt:message key="jsp.home.com1"/></h3>
-                <p><fmt:message key="jsp.home.com2"/></p>
-				<div class="list-group">
+    <h1><fmt:message key="jsp.home.com1"/></h1>
+    <!--<p><fmt:message key="jsp.home.com2"/></p>-->
+	
+    <div class="contentContainer">		
+               
+				<div class="list-group" id="communities-list">
 <%
 	boolean showLogos = ConfigurationManager.getBooleanProperty("jspui.home-page.logos", true);
     for (int i = 0; i < communities.length; i++)
     {
-%><div class="list-group-item row">
+%><div class="list-group-item communityItem">
 <%  
 		Bitstream logo = communities[i].getLogo();
 		if (showLogos && logo != null) { %>
-	<div class="col-md-3">
-        <img alt="Logo" class="img-responsive" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" /> 
+	<div class="communityItemImg">
+        <img alt="Logo"  src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" /> 
 	</div>
     
     
-	<div class="col-md-9">
+	<div class="communityItemContent">
 <% } else { %>
-	<div class="col-md-12">
+	<div class="communityItemContent">
 <% }  %>		
-		<h4 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= communities[i].getHandle() %>"><%= communities[i].getMetadata("name") %></a>
+		<h3 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= communities[i].getHandle() %>"><%= communities[i].getMetadata("name") %></a>
 <%
         if (ConfigurationManager.getBooleanProperty("webui.strengths.show"))
         {
@@ -207,7 +212,7 @@ if (communities != null && communities.length != 0)
         }
 
 %>
-		</h4>
+		</h3>
 		<p><%= communities[i].getMetadata("short_description") %></p>
     </div>
 </div>                            
@@ -219,16 +224,54 @@ if (communities != null && communities.length != 0)
 <%
 }
 %>
+    </div> <!-- aqui termina la lista de comunidades-->
 	<%
     	int discovery_panel_cols = 8;
     	int discovery_facet_cols = 4;
     %>
 	<%@ include file="discovery/static-sidebar-facet.jsp" %>
-</div>
+
 
 <div class="row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>
 </div>
 	
 </div>
+        
+        <script>
+        
+             
+            var breadcrumb = document.getElementsByClassName('breadcrumb')[0];
+            breadcrumb.style.display= "none";
+            
+            /*Displays colums for home discovery */
+             var discoveryHomeDisplay = function(){
+             var facetArray = document.getElementsByClassName('facet');
+                    for(var i =0; i < facetArray.length; i++){
+                        var facet = facetArray[i];
+
+                            if(window.innerWidth < 660){
+                                facet.style.width = '100%';
+                                facet.style.marginTop = '10px';
+                                facet.style.marginLeft = '0px';
+                            }
+                            else
+                            {
+                                facet.style.width = '30%';   
+                                facet.style.float = 'left';
+                                facet.style.margin = '10px 10px';
+                            }    
+                    }
+             }
+             
+           
+             discoveryHomeDisplay();
+             
+               
+             
+             window.onresize = function(){
+             discoveryHomeDisplay();
+             }
+            
+        </script>
 </dspace:layout>

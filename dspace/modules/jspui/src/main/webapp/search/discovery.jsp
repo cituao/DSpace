@@ -174,9 +174,9 @@
 	<div class="discovery-query panel-heading">
         <div class="container">
     <form action="simple-search" method="get" id="hiddenForm">
-         <label for="tlocation">
+         <!--<label for="tlocation">
          	<fmt:message key="jsp.search.results.searchin"/>
-         </label>
+         </label>-->
          <select name="location" id="tlocation">
 <%
     if (scope == null)
@@ -205,7 +205,7 @@
                                <!-- <input type="submit" id="main-query-submit" class="btn btn-primary" value="<fmt:message key="jsp.general.go"/>" />-->
     <input type="submit" id="main-query-submit" class="btn btn-primary" value="" >
 <% if (StringUtils.isNotBlank(spellCheckQuery)) {%>
-	<p class="lead"><fmt:message key="jsp.search.didyoumean"><fmt:param><a id="spellCheckQuery" data-spell="<%= Utils.addEntities(spellCheckQuery) %>" href="#"><%= spellCheckQuery %></a></fmt:param></fmt:message></p>
+	<p class="lead" id="lead"><fmt:message key="jsp.search.didyoumean"><fmt:param><a id="spellCheckQuery" data-spell="<%= Utils.addEntities(spellCheckQuery) %>" href="#"><%= spellCheckQuery %></a></fmt:param></fmt:message></p>
 <% } %>                  
                                 <input type="hidden" value="<%= rpp %>" name="rpp" />
                                 <input type="hidden" value="<%= sortedBy %>" name="sort_by" />
@@ -411,7 +411,7 @@
                }
 %>
            </select>
-           <input class="btn btn-primary" type="submit" name="submit_search" value="<fmt:message key="search.update" />" />
+           <input class="btn btn-primary" style="float:right;" type="submit" name="submit_search" value="<fmt:message key="search.update" />" />
 
 <%
     if (admin_button)
@@ -479,15 +479,15 @@ else if( qResults != null)
 
 
 %>
-<hr/>
+   <!-- </hr> -->
 <!-- ******************** RESULTADOS ***************************** -->
-<div class="discovery-result-pagination row container">
+<div class="discovery-result-pagination container">
 <%
 	long lastHint = qResults.getStart()+qResults.getMaxResults() <= qResults.getTotalSearchResults()?
 	        qResults.getStart()+qResults.getMaxResults():qResults.getTotalSearchResults();
 %>
     <%-- <p align="center">Results <//%=qResults.getStart()+1%>-<//%=qResults.getStart()+qResults.getHitHandles().size()%> of --%>
-	<div class="alert alert-info"><fmt:message key="jsp.search.results.results">
+	<div class="alert alert-info pull-left"><fmt:message key="jsp.search.results.results">
         <fmt:param><%=qResults.getStart()+1%></fmt:param>
         <fmt:param><%=lastHint%></fmt:param>
         <fmt:param><%=qResults.getTotalSearchResults()%></fmt:param>
@@ -550,7 +550,7 @@ else if( qResults != null)
 	</ul>
 <!-- give a content to the div -->
 </div>
-<div class="discovery-result-results">
+<div class="discovery-result-results container">
 <% if (communities.length > 0 ) { %>
     <div class="panel panel-info">
     <div class="panel-heading"><fmt:message key="jsp.search.results.comhits"/></div>
@@ -575,9 +575,9 @@ else if( qResults != null)
 <%-- if the result page is enought long... --%>
 <% if ((communities.length + collections.length + items.length) > 10) {%>
 <%-- show again the navigation info/links --%>
-<div class="discovery-result-pagination row container">
+<div class="discovery-result-pagination container">
     <%-- <p align="center">Results <//%=qResults.getStart()+1%>-<//%=qResults.getStart()+qResults.getHitHandles().size()%> of --%>
-	<div class="alert alert-info"><fmt:message key="jsp.search.results.results">
+	<div class="alert alert-info pull-left"><fmt:message key="jsp.search.results.results">
         <fmt:param><%=qResults.getStart()+1%></fmt:param>
         <fmt:param><%=lastHint%></fmt:param>
         <fmt:param><%=qResults.getTotalSearchResults()%></fmt:param>
@@ -648,7 +648,23 @@ else
 </dspace:layout>
     <script>
    
+        /* make form height zero if no filterTag */
+        
+           function hideFiltersForm() {
+        var filtersDiv = document.getElementsByClassName('discovery-search-appliedFilters')[0];
+        var hiddenForm = document.getElementById('hiddenForm');
+            for(var i =0 ; i < 1; i++){
+                if(filtersDiv != null){
+                    hiddenForm.style.height = "auto";
+                    hiddenForm.style.paddingBottom = "8px";
+                }else{
+                    hiddenForm.style.height = "0px";
+                    hiddenForm.style.paddingBottom = "0";
+                }
+            }
+        }
 /* Tricky javascript to get the original searchBar absolute cordinates position for the filter searchBar */
+        
         
         function GetScreenCordinates(obj) {
         var p = {};
@@ -683,17 +699,17 @@ else
             query.style.position= "absolute";
              
                  if(b == 'query' ||  b == 'main-query-submit'){ 
-                     p.y= p.y - 105;  
+                     p.y= p.y - 85;  
                  }
              
                  if(b == 'tlocation'){ 
                      p.x= p.x + qw + 25;
-                     p.y= p.y - 115;  
+                     p.y= p.y - 93;  
                  }
 
                  if(b == 'newSearch'){ 
                      p.x= p.x + qw -28 ;
-                     p.y= p.y - 103;  
+                     p.y= p.y - 88;  
                  }
 
                  query.style.left= p.x + "px";
@@ -701,10 +717,12 @@ else
              
                  if(b == 'tlocation' && w < 477 && w > 390){ 
                      query.style.left=  "70%";
-                 }        
+                 }    
+               
         }
         
          document.onreadystatechange = function () {
+             hideFiltersForm();
              GetTextboxCordinates('navSearchBar','query');
              GetTextboxCordinates('navSearchBarBtn','main-query-submit');
              GetTextboxCordinates('query','tlocation');
