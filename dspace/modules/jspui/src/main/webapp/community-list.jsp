@@ -145,7 +145,7 @@
                 {
             %>     
         
-                        <div class="panel panel-warning"  style="width: 354px;">
+                        <div class="panel panel-warning"  style="width: 275px;">
                         <div class="panel-heading">
                             <h3 class="white">
                                 <fmt:message key="jsp.admintools"/>
