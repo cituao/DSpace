@@ -71,10 +71,14 @@
             out.println(" <span class=\"badge\">" + ic.getCount(c) + "</span>");
         }
 		out.println("</h3>");
+        out.println("<p>");
         if (StringUtils.isNotBlank(c.getMetadata("short_description")))
 		{
+            
 			out.println(c.getMetadata("short_description"));
+           
 		}
+     out.println("</p>");
 		out.println("<br>");
         out.println("</div>");
 		out.println( "<div class=\"media-body\">");
@@ -90,13 +94,13 @@
                 Bitstream logoCol = cols[j].getLogo();
                 if (showLogos && logoCol != null)
                 {
-                	out.println("<a class=\"col-md-2\" href=\"" + request.getContextPath() + "/handle/" 
+                	out.println("<a style=\"float:left\" href=\"" + request.getContextPath() + "/handle/" 
                 		+ cols[j].getHandle() + "\"><img class=\"media-object img-responsive\" src=\"" + 
                 		request.getContextPath() + "/retrieve/" + logoCol.getID() + "\" alt=\"collection logo\"></a>");
                 }
                  if (showLogos && logoCol == null)
                 {
-                	out.println("<a class=\"col-md-2\" href=\"" + request.getContextPath() + "/handle/" 
+                	out.println("<a  style=\"float:left\"  href=\"" + request.getContextPath() + "/handle/" 
                 		+ cols[j].getHandle() + "\"><img class=\"media-object img-responsive\" src=\"" + 
                 		request.getContextPath() + "/image/noCollectionImg.jpg\" alt=\"collection logo\"></a>");
                 }                       
@@ -137,7 +141,8 @@
 <dspace:layout titlekey="jsp.community-list.title">
 
 
-	<h1 style="border-bottom: 1px solid #d4d5d9; margin-bottom:20px;"><fmt:message key="jsp.community-list.title"/></h1>
+	<h1 style="border-bottom: 1px solid #d4d5d9; margin-bottom:20px; line-height: 70px;"><fmt:message key="jsp.community-list.title"/></h1>
+    <br/> 
 	<p>
         <fmt:message key="jsp.community-list.text1"/>   
        <%
@@ -165,6 +170,8 @@
                 }
             %>
     </p>
+        <br/>  
+           <br/> 
 
 <% if (communities.length != 0)
 {

@@ -92,7 +92,7 @@
              <!-- BROWSE ! -->
              
             <li class="dropdown" id="compactableBrowseBtn">
-             <a style="margin-left:5px; padding-left:40%;" href="#" class="dropdown-toggle" data-toggle="dropdown"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> C&C<!--<b class="caret"></b>--><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIconN.png"/> </a>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> C&C<!--<b class="caret"></b>--><img  class="dropdownIcon pull-right" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/> </a>
                
              <ul class="dropdown-menu">
                <li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li>
@@ -116,7 +116,7 @@
             </ul>
           </li><!-- BROWSE ! -->
 
-          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") %>"><img src="<%= request.getContextPath() %>/image/helpIcon.png" style="float:left"><div id="helpText" style="margin-left:20px;"><fmt:message  key="jsp.layout.navbar-default.help"/></div></dspace:popup></li>
+          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") %>"><img id="helpIconWhite" src="<%= request.getContextPath() %>/image/helpIconw.png" style="float:left"><img id="helpIconBlack" src="<%= request.getContextPath() %>/image/helpIcon.png" style="float:left"><div id="helpText" style="margin-left:20px;"><fmt:message  key="jsp.layout.navbar-default.help"/></div></dspace:popup></li>
        </ul>
 
  <% if (supportedLocales != null && supportedLocales.length > 1)
@@ -149,7 +149,7 @@
  %>
  
        <div class="nav navbar-nav navbar-right">
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-right">
          <li class="dropdown">
          <%
     if (user != null)
@@ -157,11 +157,11 @@
 		%>
 		<a href="#" class="dropdown-toggle cabin fadeBackground" id="loggedUser" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
 		      <fmt:param><b><%= StringUtils.abbreviate(navbarEmail, 20) %></b></fmt:param>
-		  </fmt:message> <b class="caret"></b></a>
+		  </fmt:message> <b class="caret pull-right"></b></a>
 		<%
     } else {
 		%> <!-- Login Btn -->
-             <a href="#" class="dropdown-toggle btn-primary" id="loginBtn" style="color:#fff" data-toggle="dropdown"><img src="<%= request.getContextPath() %>/image/userIcon.png"/> <fmt:message key="jsp.layout.navbar-default.sign"/> <!--<b class="caret"></b>--><img src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
+             <a href="#" class="dropdown-toggle btn-primary" id="loginBtn" style="color:#fff" data-toggle="dropdown"><img src="<%= request.getContextPath() %>/image/userIcon.png"/> <fmt:message key="jsp.layout.navbar-default.sign"/> <!--<b class="caret"></b>--><img style="margin-top:5px;" class="dropdownIcon pull-right" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
 	<% } %>             
              <ul class="dropdown-menu">
                <li><a href="<%= request.getContextPath() %>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a></li>
