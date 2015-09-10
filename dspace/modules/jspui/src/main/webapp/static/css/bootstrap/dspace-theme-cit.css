@@ -18,12 +18,12 @@
 ol.breadcrumb li { font-family: Cabin; color: white; font-style: italic;}
 ol.breadcrumb li a {color:#cfd0d4; font-size: 15px; font-style:italic;}
 ol.breadcrumb li a:hover {color:#606060; }
-body.undernavigation {overflow-x: hidden; padding-top: 120px;} /****************/
+body.undernavigation {overflow-x: hidden; padding-top: 50px;} /****************/
 #content {padding-bottom:212px;}
 #designedby {padding: 5px; max-width: 763px;}
 #footer_feedback {margin: 0 auto; max-width: 416px; color:#606060 !important; font-size: 10px; padding-top: 25px; margin-top:10px; clear: both;}
 input[type="file"] {display: block;height: auto;}
-div.panel-primary div.panel-heading a {color: white; margin-left: 5px;}
+div.panel-primary div.panel-heading a {color: #d4d5d9; margin-left: 5px;}
 /* This magic gets the 16x16 icon to show up.. setting height/width didn't
    do it, but adding padding actually made it show up. */
 img.ds-authority-confidence,

@@ -83,10 +83,10 @@
 	    %>
         <!--<div id="facet_<%= f %>" class="facet col-md-<%= discovery_facet_cols %>"> old -->
     <div id="facet_<%= f %>" class="facet">
-	    <h4 class="facetName sideInput"><fmt:message key="<%= fkey %>" /></h4>
+	    <h4 class="facetName sideInput"><fmt:message key="<%= fkey %>" /><img  id="dropdownIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/><img  id="dropupIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropupIcon.png"/></h4>
 	    <ul  id="facet-list-group"><%
 	    int idx = 1;
-	    int currFp = UIUtil.getIntParameter(request, f+"_page");
+	    int currFp = UIUtil.getIntParameter(request, f+"_page"); 
 	    if (currFp < 0)
 	    {
 	        currFp = 0;
@@ -111,14 +111,18 @@
 		    {
 		        %><li class="list-group-item facetItem"><span style="visibility: hidden;">.</span>
 		        <% if (currFp > 0) { %>
-		        <a class="pull-left" href="<%= request.getContextPath()
+                 <div class="control-pre-next pull-left" style="margin-left: -10px;>
+		        <a  href="<%= request.getContextPath()
 		                + searchScope
-		                + "?"+f+"_page="+(currFp-1) %>"><fmt:message key="jsp.search.facet.refine.previous" /></a>
+		                + "?"+f+"_page="+(currFp-1) %>" "><!--<fmt:message key="jsp.search.facet.refine.previous" />--><img src="<%= request.getContextPath() %>/image/previous.png"></a>
+                </div>
 	            <% } %>
 	            <% if (idx > limit) { %>
-	            <a href="<%= request.getContextPath()
+	            <div class="control-pre-next pull-right">
+                    <a href="<%= request.getContextPath()
 		            + searchScope
-	                + "?"+f+"_page="+(currFp+1) %>"><span class="pull-right"><fmt:message key="jsp.search.facet.refine.next" /></span></a>
+	                + "?"+f+"_page="+(currFp+1) %>"><!--<fmt:message key="jsp.search.facet.refine.next" />--><img src="<%= request.getContextPath() %>/image/next.png"></a>
+                </div>
 	            <%
 	            }
 	            %></li><%
@@ -129,3 +133,55 @@
 %></div><!--</div>--><%
 	}
 %>
+                    
+                    <script>
+                    var facetHeader = document.getElementsByClassName('facetName');
+                    var on = "true";
+                    
+                    $(facetHeader).click(function(){ 
+                        var facet = $(this).parent('.facet');
+                        var dropdown = $(this).find('#dropdownIcon');
+                        var dropup = $(this).find('#dropupIcon');
+                        if(on == "true"){
+                            $(facet).find("#facet-list-group").addClass('facetOff'); 
+                            $(facet).find("#facet-list-group").removeClass('facetOn'); 
+                            $(dropdown).fadeTo("fast",1);
+                            $(dropup).fadeTo("fast",0);
+                            on="false";     
+                        }else if(on == "false"){
+                            $(facet).find("#facet-list-group").removeClass('facetOff'); 
+                            $(facet).find("#facet-list-group").addClass('facetOn');
+                             $(dropdown).fadeTo("fast",0);
+                            $(dropup).fadeTo("fast",1);
+                            on="true";
+                        }
+                    });
+                        
+                    </script>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    

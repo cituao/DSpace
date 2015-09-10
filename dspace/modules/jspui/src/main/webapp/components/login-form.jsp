@@ -41,7 +41,7 @@
              </div>
       </form>
         <div id="register">
-            <span id="helpLoginButton" ><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\"%>"><div class="btn btn-primary"><img alt="help" src="<%= request.getContextPath() %>/image/helpIconw.png" /> </div><!--<fmt:message key="jsp.help"/>--></dspace:popup></span>
+            <span id="helpLoginButton" ><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\"%>"><div class="btn btn-primary" style="border-radius:0"><img alt="help" src="<%= request.getContextPath() %>/image/helpIconw.png" /> </div><!--<fmt:message key="jsp.help"/>--></dspace:popup></span>
             
         <h1 class="noto">Just arrived?</h1>
             <p class="cabin">By registering you will be able to get full services we offer</p>
