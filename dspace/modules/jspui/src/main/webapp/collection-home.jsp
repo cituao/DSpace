@@ -148,7 +148,7 @@
     { %>
           <form class="submit-form" action="<%= request.getContextPath() %>/submit" method="post">
             <input type="hidden" name="collection" value="<%= collection.getID() %>" />
-			<input class="btn btn-success col-md-12" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
+			<input class="btn btn-success col-md-12" style="width:100%" type="submit" name="submit" value="<fmt:message key="jsp.collection-home.submit.button"/>" />
           </form>
 <%  } %>
     
@@ -157,7 +157,7 @@
                  <div class="panel-heading">
                      <h3 class="white">
                      <fmt:message key="jsp.admintools"/>
-                 	<span class="pull-right"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup></span>
+                 	<span ><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup></span>
                      </h3>
                  </div>
                  <div class="panel-body">              
@@ -231,28 +231,9 @@
     <%= sidebar %>
     
 
-  
-  <%-- Browse --%>
-  <div class="panel panel-primary">
-  	<div class="panel-heading"><h3><fmt:message key="jsp.general.browse"/></h3></div>
-	<div class="panel-body">
-	<%-- Insert the dynamic list of browse options --%>
-<%
-	for (int i = 0; i < bis.length; i++)
-	{
-		String key = "browse.menu." + bis[i].getName();
-%>
-	<form method="get"  action="<%= request.getContextPath() %>/handle/<%= collection.getHandle() %>/browse">
-		<input type="hidden" name="type" value="<%= bis[i].getName() %>"/>
-		<%-- <input type="hidden" name="collection" value="<%= collection.getHandle() %>" /> --%>
-		<h4><input type="submit" class="btn sideInput" name="submit_browse" value="<fmt:message key="<%= key %>"/>"/></h4>
-	</form>
-<%	
-	}
-%>	</div>
-</div>
-
-       <!-- <form class="well" method="get" action="">
+    <div class="row">
+        
+     <form  method="get" action="">
 <%  if (loggedIn && subscribed)
     { %>
                 <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
@@ -265,7 +246,9 @@
 <%  }
     if(feedEnabled)
     { %>
-    <span class="pull-right">
+    <br/>
+    <br/>
+    <span >
     <%
     	String[] fmts = feedData.substring(5).split(",");
     	String icon = null;
@@ -294,7 +277,31 @@
     	</span><%
     }
 %>
-        </form>-->
+        </form>  
+        <br/>
+    </div>
+  
+  <%-- Browse --%>
+  <div class="panel panel-primary">
+  	<div class="panel-heading"><h3><fmt:message key="jsp.general.browse"/></h3></div>
+	<div class="panel-body">
+	<%-- Insert the dynamic list of browse options --%>
+<%
+	for (int i = 0; i < bis.length; i++)
+	{
+		String key = "browse.menu." + bis[i].getName();
+%>
+	<form method="get"  action="<%= request.getContextPath() %>/handle/<%= collection.getHandle() %>/browse">
+		<input type="hidden" name="type" value="<%= bis[i].getName() %>"/>
+		<%-- <input type="hidden" name="collection" value="<%= collection.getHandle() %>" /> --%>
+		<h4><input type="submit" class="btn sideInput" name="submit_browse" value="<fmt:message key="<%= key %>"/>"/></h4>
+	</form>
+<%	
+	}
+%>	</div>
+</div>
+
+       
 
 <div class="row">
 	<%@ include file="discovery/static-tagcloud-facet.jsp" %>

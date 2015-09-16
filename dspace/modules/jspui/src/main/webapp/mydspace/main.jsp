@@ -80,7 +80,7 @@
 	<div class="panel panel-primary">
         <div class="panel-heading" style="padding-left: 0">
             <h1>
-                    <!--<fmt:message key="jsp.mydspace"/>:--> <%= Utils.addEntities(user.getFullName()) %>
+                    <!--<fmt:message key="jsp.mydspace"/>:--> <b><%= Utils.addEntities(user.getFullName()) %></b>
 	                <span><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#mydspace\"%>"><fmt:message key="jsp.help"/></dspace:popup></span>
             <form style="margin-top:5px;" class="pull-right" action="<%= request.getContextPath() %>/mydspace" method="post">
 		        <input type="hidden" name="step" value="<%= MyDSpaceServlet.MAIN_PAGE %>" />

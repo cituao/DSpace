@@ -101,9 +101,11 @@
                 <h4 class="lightRed"><fmt:message key="jsp.community-home.heading1"/></h4>
             </div><!--itemMainTitle-->
          </div><!--row-->
+        <p>
         <% if (StringUtils.isNotBlank(intro)) { %>
         <%= intro %>
         <% } %>
+            </p>
     </div><!--well-->
 
     <% if(editor_button || add_button)  // edit button(s)
@@ -112,7 +114,7 @@
 		 <div class="panel panel-warning">
              <div class="panel-heading">
                  <h3 class="white"><fmt:message key="jsp.admintools"/>
-             	<span class="pull-right white">
+             	<span class="white">
              		<dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.site-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup>
              	</span>
                  </h3>   
