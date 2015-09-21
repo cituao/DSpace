@@ -111,10 +111,10 @@
 		    {
 		        %><li class="list-group-item facetItem"><span style="visibility: hidden;">.</span>
 		        <% if (currFp > 0) { %>
-                 <div class="control-pre-next pull-left" style="margin-left: -10px;>
+                 <div class="control-pre-next pull-left" style="margin-left: -10px;">
 		        <a  href="<%= request.getContextPath()
 		                + searchScope
-		                + "?"+f+"_page="+(currFp-1) %>" "><!--<fmt:message key="jsp.search.facet.refine.previous" />--><img src="<%= request.getContextPath() %>/image/previous.png"></a>
+		                + "?"+f+"_page="+(currFp-1) %>"><!--<fmt:message key="jsp.search.facet.refine.previous" />--><img src="<%= request.getContextPath() %>/image/previous.png"></a>
                 </div>
 	            <% } %>
 	            <% if (idx > limit) { %>
