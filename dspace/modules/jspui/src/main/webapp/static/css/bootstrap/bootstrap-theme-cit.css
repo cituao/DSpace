@@ -57,6 +57,7 @@ border-radius: 0px;
     color: #606060;
     -webkit-transition: background-color 0.5s ease;
     transition:background-color 0.5s ease;
+    border-radius: 4px;
 }
 .btn-default:hover {
 background-color: #D4D4D4;
@@ -338,6 +339,7 @@ background-color: #e12021;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);*/
     background-color: #2C2C2C;
+    color: white;
 }
 
 .panel-primary > .panel-heading {
@@ -366,7 +368,6 @@ background-color: #e12021;
 
 .panel-warning > .panel-heading {
 
-    padding-top: 6px;
     text-align: left;
     
 }
@@ -376,6 +377,7 @@ background-color: #e12021;
     text-align: left;
     padding-left: 30px;
     width: 100%;
+    border-radius: 0 !important;
 
 }
 

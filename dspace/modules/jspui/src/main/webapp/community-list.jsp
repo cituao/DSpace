@@ -141,7 +141,7 @@
 <dspace:layout titlekey="jsp.community-list.title">
 
 
-	<h1 style="border-bottom: 1px solid #d4d5d9; margin-bottom:20px; line-height: 70px;"><fmt:message key="jsp.community-list.title"/></h1>
+	<h1 style="border-bottom: 1px solid #d4d5d9; line-height: 60px;"><fmt:message key="jsp.community-list.title"/></h1>
     <br/> 
 	<p>
         <fmt:message key="jsp.community-list.text1"/>   
@@ -154,7 +154,7 @@
                         <div class="panel-heading">
                             <h3 class="white">
                                 <fmt:message key="jsp.admintools"/>
-                                <span class="pull-right white">
+                                <span class="white">
                                     <dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.site-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup>
                                 </span>
                                 </h3>
