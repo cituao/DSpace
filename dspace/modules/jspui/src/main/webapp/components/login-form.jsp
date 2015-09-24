@@ -14,7 +14,9 @@
   <%@ page import="javax.servlet.jsp.jstl.fmt.LocaleSupport" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"
     prefix="fmt" %>
+    <div class="panel-primary" id="loginContainer">
 	<div class="login-body">
+        </br></br></br></br></br>
      <form name="loginform" class="form-horizontal" id="loginform" method="post" action="<%= request.getContextPath() %>/password-login">
          <span class="notoItalic"><fmt:message key="jsp.login.password.heading"/></span>
       
@@ -41,7 +43,8 @@
              </div>
       </form>
         <div id="register">
-            <span id="helpLoginButton" ><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\"%>"><div class="btn btn-primary" style="border-radius:0"><img alt="help" src="<%= request.getContextPath() %>/image/helpIconw.png" /> </div><!--<fmt:message key="jsp.help"/>--></dspace:popup></span>
+            <span id="helpLoginButton" >
+                <dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\"%>"><div class="btn btn-primary" style="border-radius:0"><img alt="help" src="<%= request.getContextPath() %>/image/helpIconw.png" /> </div><!--<fmt:message key="jsp.help"/>--></dspace:popup></span>
             
         <h1 class="noto">Just arrived?</h1>
             <p class="cabin">By registering you will be able to get full services we offer</p>
@@ -62,3 +65,4 @@
           
 	  </script>
 	</div>
+</div>
