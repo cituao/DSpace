@@ -433,7 +433,13 @@ Collection[] collections = (Collection[])request.getAttribute("collections");
 if( error )
 {
  %>
-	<p align="center" class="submitFormWarn">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+	<p align="center" style="width:90%;" class="submitFormWarn">
 		<fmt:message key="jsp.search.error.discovery" />
 	</p>
 	<%
@@ -442,7 +448,13 @@ else if( qResults != null && qResults.getTotalSearchResults() == 0 )
 {
  %>
     <%-- <p align="center">Search produced no results.</p> --%>
-    <p align="center"><fmt:message key="jsp.search.general.noresults"/></p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p align="center" style="width:90%;"><fmt:message key="jsp.search.general.noresults"/></p>
 <%
 }
 else if( qResults != null)

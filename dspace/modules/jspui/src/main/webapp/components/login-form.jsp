@@ -48,7 +48,7 @@
             
         <h1 class="noto">Just arrived?</h1>
             <p class="cabin">By registering you will be able to get full services we offer</p>
-        <p style="width:224px; margin-top:30px;"><strong><a class="btn btn-primary" href="<%= request.getContextPath() %>/register"><fmt:message key="jsp.components.login-form.newuser"/></a></strong></p>
+        <p style="width:100%; margin-top:30px;"><strong><a class="btn btn-primary" href="<%= request.getContextPath() %>/register"><fmt:message key="jsp.components.login-form.newuser"/></a></strong></p>
         </div>
       <script type="text/javascript">
           var header= document.getElementsByTagName('header')[0];

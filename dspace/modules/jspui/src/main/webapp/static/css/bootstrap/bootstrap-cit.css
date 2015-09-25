@@ -180,7 +180,7 @@ cursor: pointer;
 }
 
 .discovery-search-filters  form input[type="submit"]{
-     margin-left: 17px;    
+     margin-left: 5px;    
 }
 
 .discovery-pagination-controls{
@@ -394,6 +394,13 @@ select{
 
 .dropdownIcon{
     margin-left: 10px;
+}
+#languageBtn{
+color: black;
+margin: 0 8px;
+}
+#languageBtn:hover, #languageBtn:active, #languageBtn:focus, #languageBtn:visited{
+background-color: #d4d5d9;
 }
 #loginBtn:hover{
     background-color: #ff4f50;

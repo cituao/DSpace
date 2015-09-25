@@ -125,7 +125,7 @@
     <div class="nav navbar-nav">
 	 <ul class="nav navbar-nav">
       <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-default.language"/><b class="caret"></b></a>
+       <a href="#" class="dropdown-toggle" id="languageBtn" data-toggle="dropdown" ><fmt:message key="jsp.layout.navbar-default.language"/><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIconN.png"/><!--<b class="caret"></b>--></a>
         <ul class="dropdown-menu">
  <%
     for (int i = supportedLocales.length-1; i >= 0; i--)
@@ -157,7 +157,7 @@
 		%>
 		<a href="#" class="dropdown-toggle cabin fadeBackground" id="loggedUser" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.loggedin">
 		      <fmt:param><b><%= StringUtils.abbreviate(navbarEmail, 20) %></b></fmt:param>
-		  </fmt:message> <b class="caret pull-right"></b></a>
+		  </fmt:message><!-- <b class="caret pull-right"></b>--></a>
 		<%
     } else {
 		%> <!-- Login Btn -->
@@ -209,7 +209,7 @@
      <ul class="nav navbar-nav" id="browseBtn">
                <!-- BROWSE ! -->   
            <li class="dropdown" >
-             <a href="#" class="dropdown-toggle cabin" data-toggle="dropdown" style="color:#fff"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> <b>Communities</b>&<b>Colections</b><!--<b class="caret"></b>--><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
+             <a href="#" class="dropdown-toggle cabin" data-toggle="dropdown" style="color:#fff"><!--<fmt:message key="jsp.layout.navbar-default.browse"/> --> <b>Communities</b>&<b>Collections</b><!--<b class="caret"></b>--><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/></a>
                
              <ul class="dropdown-menu" style="top:123%; right:0px;">
                <li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li>
