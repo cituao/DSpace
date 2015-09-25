@@ -399,7 +399,7 @@ select{
 color: black;
 margin: 0 8px;
 }
-#languageBtn:hover, #languageBtn:active, #languageBtn:focus, #languageBtn:visited{
+#languageBtn:hover, #languageBtn:active, #languageBtn:focus, #languageBtn:visited {
 background-color: #d4d5d9;
 }
 #loginBtn:hover{
