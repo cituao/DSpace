@@ -273,6 +273,11 @@ margin-bottom: 20px;
     background-color: #ff4f50;
 }
 
+.suscribeContainer{
+background-color: #F4F4F4;
+padding: 25px 10px;
+    margin-top: -30px;
+}
 .well {
   
   position: relative;
@@ -391,16 +396,19 @@ select{
 }
 
 
-
+.REDicon{
+display: none;
+}
 .dropdownIcon{
     margin-left: 10px;
 }
 #languageBtn{
-color: black;
-margin: 0 8px;
-}
+color: white;
+    
+    
+} 
 #languageBtn:hover, #languageBtn:active, #languageBtn:focus, #languageBtn:visited {
-background-color: #d4d5d9;
+background-color: #484848;
 }
 #loginBtn:hover{
     background-color: #ff4f50;
@@ -968,6 +976,13 @@ font-size: 11px;
 font-weight: bold;
 
 }
+input[name="submit_subscribe"], input[name="submit_unsubscribe"]{
+width: 100%;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    display: block;
+  
+}
 input[name="submit_show_checksums"]{
 
     border: none;
@@ -981,7 +996,11 @@ input[name="submit_show_checksums"]:hover{
 color: #ff4f50;
 }
 
-
+input[type="password"]{
+letter-spacing: 8px;
+font-size: 25px;
+font-style: normal !important;
+}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -1238,7 +1257,8 @@ color: #7581FE;
 }
 
 small {
-  font-size: 85%;
+  font-size: 82%;
+   
 }
 
 cite {
@@ -2793,6 +2813,17 @@ input[type="number"]::-webkit-inner-spin-button {
  
 }
 
+#ldap-form-control-login{
+width: 50% !important;
+    margin-right: 6px;
+}
+#ldap-uao-domain-placeholder{
+margin-top: 7px;
+display: inline-block;
+font-family: 'Cabin', sans-serif;
+color: #606060;
+font-size: 16px;
+}
 
 
 /* INPUT SEARCH BAR */
@@ -5180,7 +5211,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
+  
 }
 
 .navbar:before,
@@ -5275,6 +5306,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-collapse.in {
   overflow-y: auto;
 }
+
 
 @media (min-width: 768px) {
   .navbar-collapse {
@@ -5457,6 +5489,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 /* rule for desktop bar*/
 @media (min-width: 768px) {
+    
+    .REDicon{
+display: block;
+        margin-right: 18px;
+}
+    #languageBtn{
+color: black;
+margin: 0 8px;
+} 
+#languageBtn:hover, #languageBtn:active, #languageBtn:focus, #languageBtn:visited {
+background-color: #d4d5d9;
+}
      .navbar-nav > li > a:hover {
         background-color: transparent;
     }  
@@ -5613,7 +5657,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     }
     
     .nav .caret {
-  margin-top: 10px;
+  margin-top: 0px;
   border-top-color: #E12021;
   border-bottom-color: #E12021;
 }
@@ -5766,7 +5810,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
+ 
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -6943,12 +6987,35 @@ a.list-group-item:focus {
 .panel-body {
   padding: 0px;
 }
-table#loginChooser tr > td > a > img{
+
+#loginChooser{
+width: 60%;
+margin: 0 auto;
+margin-top: 20px;
+display: flex;
+flex-flow:  row wrap;
+justify-content: space-around;
+}
+
+#loginChooser div{
+width:330px;
+float: left;
+margin-bottom: 50px;
+}
+
+#loginChooser div > a > img{
 transition: opacity 0.3s ease;
 opacity: 1;
 }
-table#loginChooser tr td:hover > a > img{
+
+#loginChooser div:hover > a > img{
 opacity: 0.5;
+}
+
+#loginChooser div > a > strong > p{
+    margin: 0 auto;
+margin-top: 5px;
+    width: 70%;
 }
 
 .login-body {
@@ -7218,7 +7285,7 @@ margin: 0 !important;
 .listContainer{
     width: 100%;
     margin-bottom: 50px;
-    min-height: 403px;
+   /* min-height: 494px;*/
 }
 .listContainer h1{
     line-height: 70px;

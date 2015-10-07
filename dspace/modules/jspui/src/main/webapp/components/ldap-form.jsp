@@ -30,7 +30,7 @@
                         <div class="col-md-3">
                             <!-- <fmt:message key="jsp.components.ldap-form.username-or-email"/> -->
                             <img src="<%= request.getContextPath() %>/image/userIconB.svg">
-                            <input class="form-control-login" placeholder="myemail@uao.edu.co" tabindex="1" type="text" name="login_netid">
+                            <input  class="form-control-login" id="ldap-form-control-login" placeholder="mi-usuario-institucional" tabindex="1" type="text" name="login_netid"><div id="ldap-uao-domain-placeholder">@uao.edu.co</div>
                         </div>
                         
                     </div>

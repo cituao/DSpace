@@ -37,14 +37,12 @@
 <dspace:layout navbar="off" locbar="off" titlekey="jsp.login.chooser.title" nocache="true">
 <br/>
 <br/>
-    <br/>
 <br/>
     <table border="0" width="100%" >
         <tr>
             <td align="left">
                 <%-- <H1>Log In to DSpace</H1> --%>
-        <h1 style="text-align:center"><fmt:message key="jsp.login.chooser.heading"/><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\" %>"><fmt:message key="jsp.help"/></dspace:popup></h1>
-        
+       <h1 style="text-align:center"><fmt:message key="jsp.login.chooser.heading"/><div style="width:50px; display:inline-block;"><h5><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") + \"#login\" %>"><fmt:message key="jsp.help"/></dspace:popup></h5></div></h1>
             </td>
           
         </tr>
@@ -52,16 +50,14 @@
     <p></p>
     <br/>
     <br/>
-    <br/>
-    <table class="miscTable" align="center" width="70%" >
-      <tr>
-        <td class="evenRowEvenCol">
-          <h2  style="text-align:center"><fmt:message key="jsp.login.chooser.chooseyour"/></h2>
+   
+   
+          <!--<h2  style="text-align:center"><fmt:message key="jsp.login.chooser.chooseyour"/></h2>-->
             <br/>
             
            
-          <table style="margin:0 auto" cellpadding="30" id="loginChooser">
-              <tr>
+          <div  id="loginChooser">
+             
 <%
     Iterator ai = AuthenticationManager.authenticationMethodIterator();
     AuthenticationMethod am;
@@ -78,7 +74,7 @@
         {
    
 %>
-            <td><a style="display:block" href="<%= url %>">
+            <div><a style="display:block" href="<%= url %>">
                
                  <% if(count == 0){ %>
                     <img style="display:block; margin: 0 auto; margin-top:42px; margin-bottom: 20px;" src="<%= request.getContextPath() %>/image/logoLineaRoja.png">
@@ -88,8 +84,10 @@
                           <% } %>
 		<%-- This kludge is necessary because fmt:message won't
                      evaluate its attributes, so we can't use it on java expr --%>
-                 <strong><p align="center"><%= javax.servlet.jsp.jstl.fmt.LocaleSupport.getLocalizedMessage(pageContext, am.loginPageTitle(context)) %></p>
-                       </strong></a></td>
+            
+                 <strong><p align="center" class="red"><%= javax.servlet.jsp.jstl.fmt.LocaleSupport.getLocalizedMessage(pageContext, am.loginPageTitle(context)) %></p>
+                       </strong></a></div>
+                        
 <%
         count++;
         }
@@ -113,11 +111,9 @@
     }
   
 %>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+        
+          </div>
+     
 
 
 </dspace:layout>

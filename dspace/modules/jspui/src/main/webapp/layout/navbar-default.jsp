@@ -83,7 +83,8 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" id="logotype" href="<%= request.getContextPath() %>/"><h1 id="headerTextH1">Repositorio Institucional</h1><h2 id="headerTextH2">Universidad Autónoma de Occidente</h2></a>
+           <img class="pull-left REDicon"  src="<%= request.getContextPath() %>/image/REDicon.svg"/>
+         <a class="navbar-brand" id="logotype" href="<%= request.getContextPath() %>/"><h1 id="headerTextH1">Repositorio Educativo Digital</h1><h2 id="headerTextH2">Universidad Autónoma de Occidente</h2></a>
        </div>
        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="gralOpts">
          <ul class="nav navbar-nav">

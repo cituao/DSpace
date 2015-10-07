@@ -21,6 +21,13 @@ ol.breadcrumb li a:hover {color:#606060; }
 body.undernavigation {overflow-x: hidden; padding-top: 50px;} /****************/
 #content {padding-bottom:212px;}
 #designedby {padding: 5px; max-width: 763px;}
+#citContainer {padding: 35px 15px 35px 15px; max-width: 100%; min-height: 135px;  background-color: #F4F4F4}
+.citFooterBox{
+max-width: 763px;
+margin: 0 auto;
+}
+#citInfoBox{color: grey; font-size: 12px;}
+
 #footer_feedback {margin: 0 auto; max-width: 416px; color:#606060 !important; font-size: 10px; padding-top: 25px; margin-top:10px; clear: both;}
 input[type="file"] {display: block;height: auto;}
 div.panel-primary div.panel-heading a {color: #d4d5d9; margin-left: 5px;}

@@ -39,6 +39,19 @@
 </main>
             <%-- Page footer --%>
              <footer class="navbar navbar-inverse navbar-bottom">
+           
+              <!--  <div  id="citContainer">
+                    <div class="citFooterBox">
+                        <img class="pull-left" width="120px" src="<%= request.getContextPath() %>/image/citLogotipo.png" /> 
+                        <div id="citInfoBox" class="pull-left">
+                        Centro de Innovación TIC</br>
+Edificio Aulas 4 - Segundo Piso</br>
+PBX: (057) (2) 318 8000 - Ext. 12420 - 12425
+                        </div>
+                        
+                    </div>
+                </div>-->
+        
              <div id="designedby" class="container text-muted footerContainer">
              <!--<fmt:message key="jsp.layout.footer-default.theme-by"/> -->
                  <div class="footerBox"><a id="logoFooter" href="http://www.uao.edu.co"><img src="<%= request.getContextPath() %>/image/uaologo.svg"  alt="Universidad Autónoma de Occidente" /></a></div>
@@ -55,11 +68,15 @@ www.uao.edu.co<br>
                     <a href=""><img class="socialIcon" src="<%= request.getContextPath() %>/image/twitter.svg" /></a>
                    <a href=""> <img class="socialIcon" src="<%= request.getContextPath() %>/image/youtube.svg" /></a>
                 </div>
-			<div id="footer_feedback" >                                    
+                
+               
+			<div id="footer_feedback" >    
+                 <p class="text-muted" style="margin-bottom: 2px;">Tema personalizado por <a href="http://cit.uao.edu.co/portal/" id="cit-credits" role="CITcredits" target="_blank">Centro de Innovación TIC</a></p>
                                 <p class="text-muted"><fmt:message key="jsp.layout.footer-default.text"/>&nbsp;-
                                 <a target="_blank" href="<%= request.getContextPath() %>/feedback"><fmt:message key="jsp.layout.footer-default.feedback"/></a>
                                 <a href="<%= request.getContextPath() %>/htmlmap"></a></p>
-                                </div>
+               
+            </div>
 			</div>
     </footer>
     </body>

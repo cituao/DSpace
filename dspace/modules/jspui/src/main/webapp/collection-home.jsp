@@ -231,23 +231,28 @@
     <%= sidebar %>
     
 
-    <div class="row">
+    <div class="row" >
         
-     <form  method="get" action="">
+     <form  class="suscribeContainer" method="get" action="">
 <%  if (loggedIn && subscribed)
     { %>
+    <input class="btn btn-sm btn-warning" type="submit" name="submit_unsubscribe" value="<fmt:message key="jsp.collection-home.unsub"/>" />
                 <small><fmt:message key="jsp.collection-home.subscribed"/> <a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.collection-home.info"/></a></small>
-           		<input class="btn btn-sm btn-warning" type="submit" name="submit_unsubscribe" value="<fmt:message key="jsp.collection-home.unsub"/>" />
+           		
 <%  } else { %>
-                <small>
+               
+				<input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
+   
+     <small>
             		  <fmt:message key="jsp.collection-home.subscribe.msg"/>
                 </small>
-				<input class="btn btn-sm btn-info" type="submit" name="submit_subscribe" value="<fmt:message key="jsp.collection-home.subscribe"/>" />
+      <br>
+     
 <%  }
     if(feedEnabled)
     { %>
-    <br/>
-    <br/>
+  <br>
+ 
     <span >
     <%
     	String[] fmts = feedData.substring(5).split(",");
