@@ -47,6 +47,19 @@
         privateitems = true;
     }
 
+	if (withdrawn || privateitems)
+	{
+	%>
+	<script>
+		/* makes header bar dark */
+		var header = document.getElementsByTagName('header')[0];
+		var nav = document.getElementsByTagName('nav')[0];
+		header.style.backgroundColor = "black";
+		nav.style.paddingTop = "12px";
+	</script>
+	<%
+	}
+	
 	// First, get the browse info object
 	BrowseInfo bi = (BrowseInfo) request.getAttribute("browse.info");
 	BrowseIndex bix = bi.getBrowseIndex();
@@ -483,11 +496,3 @@
 	--%>
 
 </dspace:layout>
-        
-                               <script>
-    /* makes header bar dark */
-    var header = document.getElementsByTagName('header')[0];
-    var nav = document.getElementsByTagName('nav')[0];
-    header.style.backgroundColor = "black";
-        nav.style.paddingTop = "12px";
-    </script>
