@@ -67,18 +67,133 @@
   </action>
 
 
-
   <action name="startbehavioursxmlcompleteaction">
-    events.dispatch(onPanoStart);
+    if (skipintro !== null,
+      events.dispatch(onPanoStart);
+      ifnot (tour_firststartactiondone,
+        events.dispatch(onTourStart);
+        set(tour_firststartactiondone, true);
+      );
+    ,
     ifnot (tour_firststartactiondone,
-      events.dispatch(onTourStart);
-      set(tour_firststartactiondone, true);
+
+      set(sceneisfull360, false);
+      if (scene[get(xml.scene)].full360,
+        sub(viewhfov, view.hlookatmax, view.hlookatmin);
+        if (viewhfov == 360,
+          sub(viewvfov, view.vlookatmax, view.vlookatmin);
+          if (viewvfov == 180,
+            set(sceneisfull360, true);
+          );
+        );
+      );
+      
+      
+      stoptween(view.fov);
+      stoptween(view.fovmax);
+      stoptween(view.vlookat);
+      stoptween(view.fisheye);
+      
+      if (sceneisfull360 AND (device.webgl OR device.flash),
+	    setlittleplanet();
+      );
+
+
+    ifnot (sceneisfull360,
+      
+      set(view.fovmax, get(panoview.fovmax));
+      set(view.vlookat, get(panoview.v));
+      set(view.fisheye, 0.0);
+      set(view.architectural, 0.0);
+      set(view.stereographic, false);
+      set(view.pannini, 0.0);
+      set(view.fisheyefovlink, 0.5);
+      set(view.fov, get(panoview.fov));
+      
+      events.dispatch(onPanoStart);
+      ifnot (tour_firststartactiondone,
+        events.dispatch(onTourStart);
+      );
     );
+
+
+    set(tour_firststartactiondone, true);
+
+    ,
+      events.dispatch(onPanoStart);
+    );
+    );
+  </action>
+
+  <action name="startLittlePlanetIntroEffect">
+    if(tour_firstlittleplanet,
+      set(sceneisfull360, false);
+      if (scene[get(xml.scene)].full360,
+        sub(viewhfov, view.hlookatmax, view.hlookatmin);
+        if (viewhfov == 360,
+          sub(viewvfov, view.vlookatmax, view.vlookatmin);
+          if (viewvfov == 180,
+            set(sceneisfull360, true);
+          );
+        );
+      );
+      if (sceneisfull360,
+        wait(0);
+        fromlittleplanetintrotonormalview();
+      );
+    );
+  </action>
+
+  <action name="setlittleplanet">
+    set(view.architectural, 0.0);
+    set(view.vlookat, 90);
+    set(view.pannini, 0.0);
+    if(panoview.fovmax LE 150,
+      set(view.fovmax, 150);
+    ,
+      set(view.fovmax, get(panoview.fovmax));
+    );
+    set(view.stereographic, true);
+    set(view.fisheyefovlink, 1.5);
+    set(view.fisheye, 1.0);
+    set(view.fov, 150);
+    
+    
+    
+    events.dispatch(onStartLittlePlanetIntroduction);
+  </action>
+  <action name="fromlittleplanetintrotonormalview">
+	tweennormalview();
+  </action>
+  <action name="tweennormalview">
+    tween(view.fovmax, get(panoview.fovmax), 3, easeInOutQuad);
+    tween(view.vlookat, get(panoview.v), 3, easeInOutQuad);
+    if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), 3, easeInOutQuad); );
+    tween(view.pannini, 0.0, 3, easeInOutQuad);
+    tween(view.fisheye, 0.0, 3, easeInOutQuad, 
+      set(view.architectural, 0.0);
+      set(view.stereographic, false);
+      set(view.fisheyefovlink, 0.5);
+      
+      
+      events.dispatch(onPanoStart);
+      events.dispatch(onEndLittlePlanetIntroduction);
+      if (tour_firstlittleplanet,
+        events.dispatch(onTourStart);
+        set(tour_firstlittleplanet, false);
+      );
+    );
+
   </action>
 
 
 
 
+
+  <events name="startTourForJsEvents" onTourStart="startTourForJsEventsAction();" keep="true" />
+  <action name="startTourForJsEventsAction">
+    js(eventTourStarted());
+  </action>
 
 
 
@@ -209,6 +324,11 @@
     );
   </action>
   <events name="autorotation_events" onnewpano="if(tour_autorotation_pauseplugin LE 0,resumeautorotation(forceresume););" keep="true"/>
+  <events name="autorotationstartevents" onTourStart="autorotationatstart();" keep="true"/>
+  <action name="autorotationatstart">
+    if (norotation === null, startautorotation(););
+    set(events[autorotationstartevents].keep, false);
+  </action>
 
 
   <!-- AUTOTOUR -->

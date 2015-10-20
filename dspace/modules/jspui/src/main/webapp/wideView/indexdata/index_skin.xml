@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.18.3">
+
+  <!-- ************ -->
+  <!-- Social Share -->
+  <!-- ************ -->
+
+
+
+
+<ptplugin name="socialShare" engine="kolorBox">
+	<settings>
+		<option name="position" value="topright" type="string" />
+		<option name="margin_x" value="50" type="int" />
+		<option name="margin_y" value="50" type="int" />
+		<option name="animate" value="false" type="bool" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_color" value="ffffff" type="string" />
+		<option name="container_alpha" value="0.8" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="overlay_displayed" value="false" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.500007629510948" type="float" />
+		<option name="social_btn" value="facebook#twitter#email" type="string" />
+		<option name="social_orientation" value="horizontal" type="string" />
+		<option name="social_btn_size" value="64" type="int" />
+		<option name="inner_margin" value="10" type="int" />
+		
+		
+		<option name="title_displayed" value="false" type="bool" />
+		<option name="caption_displayed" value="false" type="bool" />
+		<option name="close_displayed" value="true" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback-socialShare')" type="string" />
+		<option name="zorder" value="0" type="int" />
+	</settings>
+	<internaldata>
+		
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady-socialShare">
+	set(ptplugin[socialShare].jsready, true);
+
+</action>
+
+
+
+<action name="showSocialShare-socialShare">
+	ifnot(ptplugin[socialShare].isOpen,
+		set(ptplugin[socialShare].isOpen, true);
+		pauseautorotation(forceplugin);
+
+			js(invokePluginFunction(socialShare, loadSingleArrayItem, social));
+		events.dispatch(onremovedisplayedobject);
+	);
+</action>
+
+<action name="toggleSocialShare-socialShare">
+	js(invokePluginFunction(socialShare, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox-socialShare">
+	js(invokePluginFunction(socialShare, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback-socialShare">
+	resumeautorotation(forceplugin);
+
+	
+	set(ptplugin[socialShare].isOpen, false);
+</action>
+
+<events name="kolorBoxEvents-socialShare" 
+	keep="true"
+	onsharetour="showSocialShare-socialShare();" 
+	
+	
+/>
+
+<!-- ********* -->
+<!-- Gyroscope -->
+<!-- ********* -->
+<plugin name="gyroscope"
+        url="graphics/gyro.js"
+        keep="true"
+        devices="no-desktop.and.html5"
+
+
+        friction="0.5"
+        onavailable="delayedcall(1, checkGyroAvailability(););"
+        enabled="false"
+        activated="false"
+        />
+
+<events name="gyroscopeEvents" onnewpano="planarGyroscopeTest();" keep="true" />
+
+<action name="planarGyroscopeTest">
+  if(plugin[gyroscope],
+    ifnot (plugin[gyroscope].available === undefined, 
+      if (plugin[gyroscope].available,
+        if(scene[get(xml.scene)].planar,
+          if(plugin[gyroscope].enabled,
+            switch(plugin[gyroscope].enabled);
+            if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+          );
+        ,
+          if(plugin[gyroscope].activated,
+            ifnot(plugin[gyroscope].enabled,
+              switch(plugin[gyroscope].enabled);
+              if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+            );
+          );
+        );
+      );
+    );
+  );
+</action>
+
+<action name="changeGyroscopeState">
+  if(plugin[gyroscope],
+    ifnot (plugin[gyroscope].available === undefined,
+      if (plugin[gyroscope].available,
+        if(%1,
+          set(plugin[gyroscope].activated,true);
+        ,
+          set(plugin[gyroscope].activated,false);
+        );
+        if (%1 !=  plugin[gyroscope].enabled,
+          if(plugin[gyroscope].activated,
+            switch(plugin[gyroscope].enabled);
+          ,
+            set(plugin[gyroscope].enabled, false);
+          );
+          if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+        );
+      );
+    );
+  );
+</action>
+
+<action name="checkGyroAvailability">
+  if(plugin[gyroscope],
+    ifnot (plugin[gyroscope].available === undefined, 
+      if (plugin[gyroscope].available,
+        ifnot(scene[get(xml.scene)].planar,
+          switch(plugin[gyroscope].enabled);
+          set(plugin[gyroscope].activated,true);
+        );
+        set(tour_gyroscopedevices, true);
+        events.dispatch(ongyroscopeavailable);
+      ,
+        set(tour_gyroscopedevices, false);
+      );
+    ,
+      set(tour_gyroscopedevices, false);
+    );
+    if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+  );
+</action>
+
+<!-- ************ -->
+<!-- Context Menu -->
+<!-- ************ -->
+  <contextmenu fullscreen="false" versioninfo="false" touch="true">
+    <item name="website1" onclick="getmessage(urltoopen,contextmenuwebsiteurl1);openurl(get(urltoopen),_blank);" />
+    <item name="normal"        onclick="setViewNormal();
+" separator="true"/>
+    <item name="fisheye"       onclick="setViewFisheye();
+"/>
+    <item name="architectural" onclick="setViewArchitectural();
+"/>
+    <item name="stereographic" onclick="setViewStereographic();
+"/>
+    <item name="pannini"       onclick="setViewPannini();
+"/>
+    <item name="littleplanet"  onclick="setViewLittlePlanet();
+"/>
+    <item name="fisheyeball"   onclick="setViewFisheyeBall();
+"/>
+    <item name="fullscreenentry" onclick="enterFullscreen();
+" separator="true"/>
+  </contextmenu>
+
+  <events name="contextmenuevents" keep="true" onenterfullscreen="updateContextMenu" onexitfullscreen="updateContextMenu" onxmlcomplete="updateContextMenu"/>
+  <action name="updateContextMenu">
+    getmessage(contextmenu.item[website1].caption, contextmenuopenwebsitelabel1);
+    getmessage(contextmenu.item[normal].caption, contextmenunormallabel);
+    getmessage(contextmenu.item[architectural].caption, contextmenuarchitecturallabel);
+    
+    set(sceneisfull360, false);
+    if(scene[get(xml.scene)].full360,
+      sub(viewhfov, view.hlookatmax, view.hlookatmin);
+      if (viewhfov == 360,
+        sub(viewvfov, view.vlookatmax, view.vlookatmin);
+        if (viewvfov == 180,
+          set(sceneisfull360, true);
+        );
+      );
+    );
+    if (sceneisfull360 AND (device.webgl OR device.flash),
+      set(contextmenu.item[fisheye].visible, true);
+      getmessage(contextmenu.item[fisheye].caption, contextmenufisheyelabel);
+      set(contextmenu.item[stereographic].visible, true);
+      getmessage(contextmenu.item[stereographic].caption, contextmenustereographiclabel);
+      set(contextmenu.item[pannini].visible, true);
+      getmessage(contextmenu.item[pannini].caption, contextmenupanninilabel);
+      set(contextmenu.item[littleplanet].visible, true);
+      getmessage(contextmenu.item[littleplanet].caption, contextmenulittleplanetlabel);
+      set(contextmenu.item[fisheyeball].visible, true);
+      getmessage(contextmenu.item[fisheyeball].caption, contextmenufisheyeballlabel);
+    ,
+      set(contextmenu.item[fisheye].visible, false);
+      set(contextmenu.item[stereographic].visible, false);
+      set(contextmenu.item[pannini].visible, false);
+      set(contextmenu.item[littleplanet].visible, false);
+      set(contextmenu.item[fisheyeball].visible, false);
+    );
+    if (device.fullscreensupport,
+      if(tour_fullscreen,
+        getmessage(contextmenu.item[fullscreenentry].caption, contextmenucloseFsLabel);
+        set(contextmenu.item[fullscreenentry].onclick, exitFullscreen();
+);
+       ,
+        getmessage(contextmenu.item[fullscreenentry].caption, contextmenuopenFsLabel);
+        set(contextmenu.item[fullscreenentry].onclick, enterFullscreen();
+);
+      );
+     ,
+      set(contextmenu.item[fullscreenentry].visible, false);
+    );
+  </action>
+
+
+<action name="setViewPannini">
+	set(sceneisfull360, false);
+	if(scene[get(xml.scene)].full360,
+		sub(viewhfov, view.hlookatmax, view.hlookatmin);
+		if (viewhfov == 360,
+			sub(viewvfov, view.vlookatmax, view.vlookatmin);
+			if (viewvfov == 180,
+				set(sceneisfull360, true);
+			);
+		);
+	);
+	if (sceneisfull360 AND (device.webgl OR device.flash),
+		stopSetViewTweens();
+		setViewPanniniComplete();
+	);
+</action>
+
+<action name="setViewPanniniComplete">
+	tween(view.architectural, 0.0, 0.25, easeoutquad,
+		tween(view.fovmax, get(panoview.fovmax), distance(179, 1.00));
+		set(backtonormalfirst,false);
+		if(view.pannini LT 1.0, set(backtonormalfirst,true); );
+		if(view.stereographic == false, set(backtonormalfirst,true); );
+		if(backtonormalfirst, hideTooltip();tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); );
+		tween(view.pannini, 1.0, distance(1.0, 0.75));
+		set(view.stereographic, true);
+		set(view.fisheyefovlink, 1.5);
+		tween(view.fisheye, 1.0, distance(1.0, 0.75));
+		tween(view.vlookat, get(panoview.v), 1.25);
+		if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), distance(50, 0.45)); );
+	);
+</action>
+
+<action name="setViewFisheye">
+	set(sceneisfull360, false);
+	if(scene[get(xml.scene)].full360,
+		sub(viewhfov, view.hlookatmax, view.hlookatmin);
+		if (viewhfov == 360,
+			sub(viewvfov, view.vlookatmax, view.vlookatmin);
+			if (viewvfov == 180,
+				set(sceneisfull360, true);
+			);
+		);
+	);
+	if (sceneisfull360 AND (device.webgl OR device.flash),
+		stopSetViewTweens();
+		setViewFisheyeComplete();
+	);
+</action>
+
+<action name="setViewFisheyeComplete">
+	tween(view.architectural, 0.0, distance(1.0, 0.30), easeoutquad, 
+		tween(view.fisheye, 0.0, distance(1.0, 0.30), easeoutquad,
+			set(view.stereographic,false);
+			tween(view.pannini, 0.0, distance(1.0, 0.75));
+			tween(view.fovmax, 179, 0.5);
+			set(view.fisheyefovlink, 1.5);
+			if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), distance(50, 0.45)); );
+			tween(view.fisheye, 0.40, distance(1.0, 0.75));
+			tween(view.vlookat, get(panoview.v), 1.25);
+		);
+	);
+</action>
+
+<action name="setViewStereographic">
+	set(sceneisfull360, false);
+	if(scene[get(xml.scene)].full360,
+		sub(viewhfov, view.hlookatmax, view.hlookatmin);
+		if (viewhfov == 360,
+			sub(viewvfov, view.vlookatmax, view.vlookatmin);
+			if (viewvfov == 180,
+				set(sceneisfull360, true);
+			);
+		);
+	);
+	if (sceneisfull360 AND (device.webgl OR device.flash),
+		stopSetViewTweens();
+		setViewStereographicComplete();
+	);
+</action>
+
+<action name="setViewStereographicComplete">
+	tween(view.architectural, 0.0, 0.25, easeoutquad, 
+		tween(view.fovmax, get(panoview.fovmax), distance(179, 1.00));
+		set(backtonormalfirst,false);
+		if(view.pannini GE 1.0, set(backtonormalfirst,true) );
+		if(view.stereographic == false, set(backtonormalfirst,true) );
+		if(backtonormalfirst, hideTooltip();tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); );
+		tween(view.pannini, 0.0, distance(1.0, 0.75));
+		set(view.stereographic, true);
+		set(view.fisheyefovlink, 1.5);
+		tween(view.fisheye, 1.0, distance(1.0, 0.75), easeoutquad);
+		tween(view.vlookat, get(panoview.v), 1.25);
+		if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), distance(50, 0.45)); );
+	);
+</action>
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);js(setFullscreen(false));</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);js(setFullscreen(true));</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+  <action name="enterFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,true);events.dispatch(onenterfullscreen);</action>
+  <action name="exitFullScreenFallback">set(fullscreen,false);</action>
+  <action name="enterFullScreenFallback">set(fullscreen,true);</action>
+  
+  <action name="resizeFullScreenEvent">delayedcall(0,updatescreen(););</action>
+
+<action name="setViewArchitectural">
+	stopSetViewTweens();
+	setViewArchitecturalComplete();
+</action>
+
+<action name="setViewArchitecturalComplete">
+	tween(view.fovmax, get(panoview.fovmax), distance(179, 1.00), easeoutquad);
+	tween(view.architectural, 1.0, distance(1.0, 0.45), easeoutquad, 
+		tween(view.pannini, 0.0, distance(1.0, 0.45));
+		tween(view.fisheye, 0.0, distance(1.0, 0.45), easeoutquad, 
+			set(view.fisheyefovlink, 0.5);
+			set(view.stereographic,false);
+			tween(view.vlookat, get(panoview.v), 1.25);
+			if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), distance(50, 0.45)); );
+		);
+	);
+</action>
+
+<action name="setViewLittlePlanet">
+	set(sceneisfull360, false);
+	if(scene[get(xml.scene)].full360,
+		sub(viewhfov, view.hlookatmax, view.hlookatmin);
+		if (viewhfov == 360,
+			sub(viewvfov, view.vlookatmax, view.vlookatmin);
+			if (viewvfov == 180,
+				set(sceneisfull360, true);
+			);
+		);
+	);
+	if (sceneisfull360 AND (device.webgl OR device.flash),
+		stopSetViewTweens();
+		setViewLittlePlanetComplete();
+	);
+</action>
+
+<action name="setViewLittlePlanetComplete">
+	tween(view.architectural, 0.0, 0.25, easeoutquad, 
+		tween(view.vlookat, 90, distance(179, 1.50), easeoutquad);
+		set(backtonormalfirst,false);
+		if(view.pannini GE 1.0, set(backtonormalfirst,true) );
+		if(view.stereographic == false, set(backtonormalfirst,true) );
+		if(backtonormalfirst, hideTooltip();tween(view.fisheye, 0.0 ,distance(1.0, 0.25), easeoutquad, WAIT); );
+		tween(view.pannini, 0.0, distance(1.0, 0.75));
+		if(panoview.fovmax LE 150, set(view.fovmax, 150); , set(view.fovmax, get(panoview.fovmax)); );
+		set(view.stereographic, true);
+		set(view.fisheyefovlink, 1.5);
+		tween(view.fisheye, 1.0, distance(1.0, 0.75), easeoutquad);
+		tween(view.fov, 150, distance(179, 0.75), easeoutquad);
+	);
+</action>
+
+<action name="setViewFisheyeBall">
+	set(sceneisfull360, false);
+	if(scene[get(xml.scene)].full360,
+		sub(viewhfov, view.hlookatmax, view.hlookatmin);
+		if (viewhfov == 360,
+			sub(viewvfov, view.vlookatmax, view.vlookatmin);
+			if (viewvfov == 180,
+				set(sceneisfull360, true);
+			);
+		);
+	);
+	if (sceneisfull360 AND (device.webgl OR device.flash),
+		stopSetViewTweens();
+		setViewFisheyeBallComplete();
+	);
+</action>
+
+<action name="setViewFisheyeBallComplete">
+	tween(view.architectural, 0.0, distance(1.0, 0.30), easeoutquad, 
+		set(view.fisheyefovlink, 1.5);
+		tween(view.fisheye, 1.0, distance(1.0, 0.30), easeoutquad,
+			set(view.stereographic,false);
+			tween(view.pannini, 0.0, distance(1.0, 0.45));
+			if(panoview.fovmax LE 179, set(view.fovmax, 179);, set(view.fovmax, get(panoview.fovmax)); );
+			tween(view.fov, 179, 4.0, easeInOutQuad );
+			tween(view.vlookat, get(panoview.v), 1.25);
+			set(display.details, 22);
+		);
+	);
+</action>
+
+<action name="setViewNormal">
+	stopSetViewTweens();
+	setViewNormalComplete();
+</action>
+
+<action name="setViewNormalComplete">
+	tween(view.architectural, 0.0, distance(1.0, 0.45), easeoutquad,
+		tween(view.fovmax, get(panoview.fovmax), distance(179, 1.00));
+		tween(view.vlookat, get(panoview.v), distance(90, 0.45));
+		tween(view.pannini, 0.0, distance(1.0, 0.45));
+		tween(view.fisheye, 0.0, distance(1.0, 0.45), easeoutquad,
+			set(view.stereographic,false);
+			set(view.fisheyefovlink, 0.5);
+			if(panoview.fov LE view.fov, tween(view.fov, get(panoview.fov), distance(50, 0.45)); );
+		);
+	);
+</action>
+
+<action name="stopSetViewTweens">
+	stoptween(view.fov);
+	stoptween(view.fovmax);
+	stoptween(view.vlookat);
+	stoptween(view.fisheye);
+	stoptween(view.architectural);
+	stoptween(view.pannini);
+</action>
+
+</krpano>
