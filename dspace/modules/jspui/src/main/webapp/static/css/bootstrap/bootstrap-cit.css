@@ -1717,8 +1717,24 @@ pre code {
   overflow-y: scroll;
 }
 
+#iframe{
+width: 100%;
+height: 350px;
+border: 1px solid #d4d5d9;
+box-shadow: 1px 1px 1px solid #d4d5d9;
+ opacity: 0;
+    animation: goopacity 2s 0.6s 1 normal cubic-bezier(0, 1.15, 1, 1) forwards;
+    -webkit-animation: goopacity 2s 0.6s 1 normal cubic-bezier(0, 1.15, 1, 1) forwards;
+    -moz-animation-name: goopacity 2s 0.6s 1 normal cubic-bezier(0, 1.15, 1, 1) forwards;
+    -ms-animation-name: goopacity 2s 0.6s 1 normal cubic-bezier(0, 1.15, 1, 1) forwards;
+    -o-animation-name: goopacity 2s 0.6s 1 normal cubic-bezier(0, 1.15, 1, 1) forwards;
+}
+
 .banner{
-margin-top: 50px;
+position: relative;
+left: -18%;
+margin-top: 35px;
+min-width: 137%;
 }
 
 .full-width-container{
@@ -1763,7 +1779,7 @@ justify-content: space-between;
 .row {
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .row:before,

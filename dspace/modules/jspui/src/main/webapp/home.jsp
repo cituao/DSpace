@@ -67,13 +67,17 @@
     <!-- Banner encabezado, transladado de header-default /  sólo aparece en el HOME -->
     <div class="container banner">
     <div class="row">
-        <div class="col-md-9 brand">
-            <!--<h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
-            <fmt:message key="jsp.layout.header-default.brand.description" />  -->
+    <iframe src="<%= request.getContextPath() %>/wideView/index.html" frameborder="0" scrolling="no" id="iframe">
+       <div class="col-md-9 brand">
+           <h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
+            <fmt:message key="jsp.layout.header-default.brand.description" /> 
             <img width="100%" src='<%= request.getContextPath() %>/image/mainImg.svg'/>
         </div>
-        <div class="col-md-3" id="anosLogo"><img width="100%" style="position:relative; top:46px;" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
-        </div>
+        <div class="col-md-3" id="anosLogo">
+            <img width="100%" style="position:relative; top:46px;" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
+        </div> 
+    </iframe>
+         
     </div>
 </div>
     
@@ -170,10 +174,8 @@ if (submissions != null && submissions.count() > 0)
 <!--<div class="col-md-4">
     <%= sideNews %>
 </div>-->
-    <br>
-    <br>
-    <br>
-</div>
+   
+</div><!-- ROW -->
 <div class="listContainer container row">
 <%
 if (communities != null && communities.length != 0)
