@@ -16,6 +16,17 @@
 
 
 
+  <data name="en_contextmenuopenwebsitelabel1"><![CDATA[Centro de Innovación Tic]]></data>
+  <data name="en_contextmenuwebsiteurl1"><![CDATA[http://cit.uao.edu.co]]></data>
+  <data name="en_contextmenuopenFsLabel"><![CDATA[Introducir Pantalla Completa]]></data>
+  <data name="en_contextmenucloseFsLabel"><![CDATA[Salir de vista de Pantalla Completa]]></data>
+  <data name="en_contextmenunormallabel"><![CDATA[Vista normal]]></data>
+  <data name="en_contextmenufisheyelabel"><![CDATA[Vista de Ojo de Pez]]></data>
+  <data name="en_contextmenuarchitecturallabel"><![CDATA[Vista Arquitectural]]></data>
+  <data name="en_contextmenustereographiclabel"><![CDATA[Vista Estereográfica]]></data>
+  <data name="en_contextmenupanninilabel"><![CDATA[Vista Pannini]]></data>
+  <data name="en_contextmenulittleplanetlabel"><![CDATA[Vista de Planeta Pequeño]]></data>
+  <data name="en_contextmenufisheyeballlabel"><![CDATA[Vista de Bola de Ojo de Pez]]></data>
 
 
 
