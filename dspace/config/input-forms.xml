@@ -15,6 +15,40 @@
 
  <form-map>
    <name-map collection-handle="default" form-name="traditional" />
+   <name-map collection-handle="tesis-car" form-name="tesis" />
+   <name-map collection-handle="10614/469" form-name="tesis" />
+   <name-map collection-handle="10614/445" form-name="tesis" />
+   <name-map collection-handle="10614/466" form-name="tesis" />
+   <name-map collection-handle="10614/574" form-name="tesis" />
+   <name-map collection-handle="10614/599" form-name="tesis" />
+   <name-map collection-handle="10614/561" form-name="tesis" />
+   <name-map collection-handle="10614/271" form-name="tesis" />
+   <name-map collection-handle="10614/491" form-name="tesis" />
+   <name-map collection-handle="10614/303" form-name="tesis" />
+   <name-map collection-handle="10614/301" form-name="tesis" />
+   <name-map collection-handle="10614/315" form-name="tesis" />
+   <name-map collection-handle="10614/327" form-name="tesis" />
+   <name-map collection-handle="10614/344" form-name="tesis" />
+   <name-map collection-handle="10614/391" form-name="tesis" />
+   <name-map collection-handle="10614/411" form-name="tesis" />
+   <name-map collection-handle="10614/428" form-name="tesis" />
+   <name-map collection-handle="10614/509" form-name="tesis" />
+   <name-map collection-handle="10614/813" form-name="tesis" />
+   <name-map collection-handle="10614/2929" form-name="tesis" />
+   <name-map collection-handle="10614/2471" form-name="tesis" />
+   <name-map collection-handle="10614/2965" form-name="tesis" />
+   <name-map collection-handle="10614/2563" form-name="tesis" />
+   <name-map collection-handle="10614/1962" form-name="tesis" />
+   <name-map collection-handle="10614/798" form-name="tesis" />
+   <name-map collection-handle="10614/795" form-name="tesis" />
+   <name-map collection-handle="10614/797" form-name="tesis" />
+   <name-map collection-handle="10614/5222" form-name="tesis" />
+   <name-map collection-handle="10614/5270" form-name="tesis" />
+   <name-map collection-handle="10614/5272" form-name="tesis" />
+   <name-map collection-handle="10614/5946" form-name="tesis" />
+   <name-map collection-handle="10614/5720" form-name="tesis" />
+   <name-map collection-handle="10614/5077" form-name="tesis" />
+   <name-map collection-handle="10614/5341" form-name="tesis" />
  </form-map>
 
 
@@ -202,6 +236,247 @@ it, please enter the types and the actual numbers or codes.</hint>
      </page>
    </form>
 
+   <form name="tesis">
+	 <page number="1">
+	
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>contributor</dc-element>
+			<dc-qualifier>author</dc-qualifier>
+			<repeatable>true</repeatable>
+			<label>Autor</label>
+			<input-type>name</input-type>
+			<hint>Una entidad o persona responsable del contenido del objeto.</hint>
+			<required>Por favor, ingrese el responsable</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>contributor</dc-element>
+			<dc-qualifier>advisor</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Colaborador</label>
+			<input-type>name</input-type>
+			<hint>Una entidad o persona colaboradora del contenido del objeto.</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>title</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Titulo</label>
+			<input-type>onebox</input-type>
+			<hint>Un Titulo puede ser un nombre por el cual el recurso es conocido formalmente.</hint>
+			<required>Por favor, ingrese el Titulo del documento</required>
+		</field>
+		<field>		
+			<dc-schema>dc</dc-schema>
+			<dc-element>title</dc-element>
+			<dc-qualifier>alternative</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Titulo alternativo</label>
+			<input-type>onebox</input-type>
+			<hint>Titulo alternativo del documento.</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>coverage</dc-element>
+			<dc-qualifier>spatial</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Localizacion Espacial</label>
+			<input-type>onebox</input-type>
+			<hint>La cobertura general, abarca localizacion espacial (un nombre de lugar o coordenadas geograficas)</hint>
+			<required></required>
+		</field> 
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>rights</dc-element>
+			<dc-qualifier>accesRights</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Derechos de autor</label>
+			<input-type value-pairs-name="common_derechos">dropdown</input-type>
+			<hint>Informacion sobre los derechos que el autor atribuye al objeto.</hint>
+			<required>Por favor seleccione los los derechos de autor</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>description</dc-element>
+			<dc-qualifier>abstract</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Breve resumen</label>
+			<input-type>textarea</input-type>
+			<hint>Proporciona un breve resumen acerca del contenido del objetivo.</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>description</dc-element>
+			<dc-qualifier>tableofcontents</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Contenido</label>
+			<input-type>textarea</input-type>
+			<hint>Breve resumen del item</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>date</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Fecha</label>
+			<input-type>date</input-type>
+			<hint>La fecha se asocia con la creacion o la disponibilidad del objeto</hint>
+			<required>Por favor, ingrese la fecha</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>date</dc-element>
+			<dc-qualifier>created</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Fecha</label>
+			<input-type>date</input-type>
+			<hint>Por favor ingrese la fecha del trabajo de grado</hint>
+			<required>Por favor, ingrese la fecha</required>
+		</field>
+		<field>
+		<dc-schema>dc</dc-schema>
+			<dc-element>format</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Extension del objeto </label>
+			<input-type value-pairs-name="extensiones">dropdown</input-type>
+			<hint>Se encuentra relacionado directamente con la extension del objeto para determinar la aplicacion necesaria para su funcionamiento.</hint>
+			<required>Por favor, ingrese el formato</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>language</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Lenguaje</label>
+			<input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+			<hint>Lenguaje o lenguajes en los cuales se encuentra el objeto.</hint>
+			<required></required>
+		</field> 
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>description</dc-element>
+			<dc-qualifier>location</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Ubicacion</label>
+			<input-type>onebox</input-type>
+			<hint>Proporciona un breve resumen acerca del contenido del objetivo.</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>rights</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Derechos</label>
+			<input-type value-pairs-name="derechos_de_autor">dropdown</input-type>
+			<hint>
+				EL AUTOR autoriza a la Universidad Autónoma de Occidente, de forma indefinida,  para que en los términos establecidos en la Ley 23 de 1982, 
+				la Ley 44 de 1993, la Decisión andina 351 de 1993, el Decreto 460 de 1995 y demás leyes y jurisprudencia vigente al respecto, 
+				haga publicación de este con fines educativos. PARÁGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material, 
+				también para formato digital, electrónico, virtual, para usos en red, Internet, extranet, intranet, biblioteca digital y demás para cualquier formato conocido o por conocer.
+				EL AUTOR, expresa que el documento (trabajo de grado, pasantía, casos o tesis) objeto de la presente autorización es original y 
+				la elaboró sin quebrantar ni suplantar los derechos de autor de terceros, y de tal forma, el documento (trabajo de grado, pasantía, casos o tesis) 
+				es de su exclusiva autoría y tiene la titularidad sobre éste. PARÁGRADO: en caso de presentarse alguna reclamación o acción por parte de un tercero, 
+				referente a los derechos de autor sobre el documento (Trabajo de grado, Pasantía, casos o tesis) en cuestión, EL AUTOR, asumirá la responsabilidad total, 
+				y saldrá en defensa de los derechos aquí autorizados; para todos los efectos, la Universidad  Autónoma de Occidente actúa como un tercero de buena fe.
+				Toda persona que consulte ya sea en la biblioteca o en medio electrónico podrá copiar apartes del texto citando siempre la fuente, es decir el título del trabajo y el autor. 
+				Esta autorización no implica renuncia a la facultad que tengo de publicar total o parcialmente la obra.
+			</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>description</dc-element>
+			<dc-qualifier>notes</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Notas</label>
+			<input-type>textarea</input-type>
+			<hint>Notas.</hint>
+			<required></required>
+		</field> 
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>relation</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Objeto relacionado</label>
+			<input-type>onebox</input-type>
+			<hint>Una referencia a un objeto relacionado. Una referencia a una coleccion o serie de la cual hace parte.</hint>
+			<required></required>
+		</field> 
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>subject</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>true</repeatable>
+			<label>Palabras Clave</label>
+			<input-type>twobox</input-type>
+			<hint>Tematica del contenido del objeto, definido en palabras clave o frases claves o codigos de clasificacion que describen el tema del objeto.</hint>
+			<required>Por favor ingrese las palabras clave</required>
+		</field> 
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>type</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Tipo de documento</label>
+			<input-type value-pairs-name="common_types">dropdown</input-type>
+			<hint>Tipo de resultado cientifico del cual el Recurso es una manifestacion.</hint>
+			<required>Por favor, seleccione el tipo de documento</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>type</dc-element>
+			<dc-qualifier>spa</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Tipo de documento</label>
+			<input-type value-pairs-name="type_español">dropdown</input-type>
+			<hint>Tipo de documento pero almacenado en español.</hint>
+			<required>Por favor, seleccione el tipo de documento en español</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>publisher</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<repeatable>true</repeatable>
+			<label>Publisher</label>
+			<input-type>onebox</input-type>
+			<hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
+			<required>.</required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>publisher</dc-element>
+			<dc-qualifier>program</dc-qualifier>
+			<repeatable>false</repeatable>
+			<label>Programa</label>
+			<input-type value-pairs-name="depar_programa">dropdown</input-type>
+			<hint>Elija el departamento o programa que publica</hint>
+			<required></required>
+		</field>
+		<field>
+			<dc-schema>dc</dc-schema>
+			<dc-element>identifier</dc-element>
+			<dc-qualifier></dc-qualifier>
+			<!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+			<repeatable>true</repeatable>
+			<label>Identifiers</label>
+			<input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+			<hint>Por favor ingrese el o los numeros de identificacion para este item.</hint>
+			<required></required>
+		</field>
+ 
+	 
+	 </page>
+	</form>
+   
    <form name="one">
      <page number="1">
        <field>
@@ -233,7 +508,193 @@ it, please enter the types and the actual numbers or codes.</hint>
  <!-- stores the associated stored-values in the database.                  -->
 
  <form-value-pairs>
-   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
+ 
+	<value-pairs value-pairs-name="common_derechos" dc-term="rights_confidencialidad">     
+     <pair>
+       <displayed-value>Restringido en su totalidad</displayed-value>
+       <stored-value>ClosedAccess</stored-value>
+      </pair>
+     <pair>
+       <displayed-value>Acceso a partes especificas del documento</displayed-value>
+       <stored-value>RestrictedAccess</stored-value>
+      </pair>
+	  <pair>
+       <displayed-value>Restringido por un tiempo determinado</displayed-value>
+       <stored-value>embargoedAccess</stored-value>
+     </pair>
+	  <pair>
+       <displayed-value>Acceso irrestricto a todo el objeto digital</displayed-value>
+       <stored-value>OpenAccess</stored-value>
+     </pair>
+	 
+   </value-pairs>
+
+	<value-pairs value-pairs-name="extensiones" dc-term="format">
+		 <pair>
+			 <displayed-value>PDF</displayed-value>
+			 <stored-value>PDF</stored-value>
+		 </pair>
+		
+ </value-pairs>
+
+	<value-pairs value-pairs-name="publisher" dc-term="publisher">
+		 <pair>
+			 <displayed-value>Universidad Autonoma de Occidente</displayed-value>
+			 <stored-value>Universidad Autonoma de Occidente</stored-value>
+		 </pair>
+
+</value-pairs>
+
+	<value-pairs value-pairs-name="depar_programa" dc-term="publisher_program">
+		 <pair>
+			 <displayed-value>Administración de Empresas</displayed-value>
+			 <stored-value>Administración de Empresas</stored-value>
+		 </pair>
+	<pair>
+		<displayed-value>Administración de Empresas Modalidad Dual</displayed-value>
+		<stored-value>Administración de Empresas Modalidad Dual</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Administración Turística</displayed-value>
+		<stored-value>Administración Turística</stored-value>
+	</pair>
+         <pair>
+                <displayed-value>Mercadeo y Negocios Internacionales</displayed-value>
+                <stored-value>Mercadeo y Negocios Internacionales</stored-value>
+        </pair>
+	<pair>
+		<displayed-value>Administración del Medio Ambiente y de los Recursos Naturales</displayed-value>
+		<stored-value>Administración del Medio Ambiente y de los Recursos Naturales</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Administración Modalidad Dual</displayed-value>
+		<stored-value>Administración Modalidad Dual</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Banca y Finanzas</displayed-value>
+		<stored-value>Banca y Finanzas</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Cine y Comunicación Digital</displayed-value>
+		<stored-value>Cine y Comunicación Digital</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Comunicación Publicitaria</displayed-value>
+		<stored-value>Comunicación Publicitaria</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Comunicación Social-Periodismo</displayed-value>
+		<stored-value>Comunicación Social-Periodismo</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Contaduría Pública</displayed-value>
+		<stored-value>Contaduría Pública</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Diseño de la Comunicación Gráfica</displayed-value>
+		<stored-value>Diseño de la Comunicación Gráfica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Economía</displayed-value>
+		<stored-value>Economía</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Ambiental</displayed-value>
+		<stored-value>Ingeniería Ambiental</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Biomédica</displayed-value>
+		<stored-value>Ingeniería Biomédica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería de Producción</displayed-value>
+		<stored-value>Ingeniería de Producción</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Eléctrica</displayed-value>
+		<stored-value>Ingeniería Eléctrica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Electrónica</displayed-value>
+		<stored-value>Ingeniería Electrónica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Electrónica y Telecomunicaciones</displayed-value>
+		<stored-value>Ingeniería Electrónica y Telecomunicaciones</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Industrial</displayed-value>
+		<stored-value>Ingeniería Industrial</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Informática </displayed-value>
+		<stored-value>Ingeniería Informática </stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Mecánica</displayed-value>
+		<stored-value>Ingeniería Mecánica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeniería Mecatrónica</displayed-value>
+		<stored-value>Ingeniería Mecatrónica</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Ingeriría Multimedia</displayed-value>
+		<stored-value>Ingeriría Multimedia</stored-value>
+	</pair>
+        <pair>
+                <displayed-value>Maestría en Administración de Empresas</displayed-value>
+                <stored-value>Maestría en Administración de Empresas</stored-value>
+        </pair>
+         <pair>
+                <displayed-value>Maestría en Comunicación</displayed-value>
+                <stored-value>Maestría en Comunicación</stored-value>
+        </pair>
+         <pair>
+                <displayed-value>Maestría en Economía</displayed-value>
+                <stored-value>Maestría en Economía</stored-value>
+        </pair>
+	<pair>
+		<displayed-value>Maestría en Filosofía del Derecho</displayed-value>
+		<stored-value>Maestría en Filosofía del Derecho</stored-value>
+	</pair>
+        <pair>
+                <displayed-value>Maestría en Higiene y seguridad Industrial</displayed-value>
+                <stored-value>Maestría en Higiene y seguridad Industrial</stored-value>
+        </pair>
+        <pair>
+                <displayed-value>Maestría en Ingeniería</displayed-value>
+                <stored-value>Maestría en Ingeniería</stored-value>
+        </pair>
+	<pair>
+		<displayed-value>Maestría en Logística Integral</displayed-value>
+		<stored-value>Maestría en Logística Integral</stored-value>
+	</pair>
+
+</value-pairs>
+	 
+	<value-pairs value-pairs-name="derechos_de_autor" dc-term="rights">
+<pair>
+			 <displayed-value>acepto autorizacion</displayed-value>
+			 <stored-value>
+				 EL AUTOR autoriza a la Universidad Autónoma de Occidente, de forma indefinida,  para que en los términos establecidos en la Ley 23 de 1982,
+				 la Ley 44 de 1993, la Decisión andina 351 de 1993, el Decreto 460 de 1995 y demás leyes y jurisprudencia vigente al respecto,
+				 haga publicación de este con fines educativos. PARÁGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material,
+				 también para formato digital, electrónico, virtual, para usos en red, Internet, extranet, intranet, biblioteca digital y demás para cualquier formato conocido o por conocer.
+				 EL AUTOR, expresa que el documento (trabajo de grado, pasantía, casos o tesis) objeto de la presente autorización es original y
+				 la elaboró sin quebrantar ni suplantar los derechos de autor de terceros, y de tal forma, el documento (trabajo de grado, pasantía, casos o tesis)
+				 es de su exclusiva autoría y tiene la titularidad sobre éste. PARÁGRADO: en caso de presentarse alguna reclamación o acción por parte de un tercero,
+				 referente a los derechos de autor sobre el documento (Trabajo de grado, Pasantía, casos o tesis) en cuestión, EL AUTOR, asumirá la responsabilidad total,
+				 y saldrá en defensa de los derechos aquí autorizados; para todos los efectos, la Universidad  Autónoma de Occidente actúa como un tercero de buena fe.
+				 Toda persona que consulte ya sea en la biblioteca o en medio electrónico podrá copiar apartes del texto citando siempre la fuente, es decir el título del trabajo y el autor.
+				 Esta autorización no implica renuncia a la facultad que tengo de publicar total o parcialmente la obra.
+			 </stored-value>
+		 </pair>
+
+	 </value-pairs>
+	
+ 
+	<value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
      <pair>
        <displayed-value>ISSN</displayed-value>
        <stored-value>issn</stored-value>
@@ -260,7 +721,142 @@ it, please enter the types and the actual numbers or codes.</hint>
      </pair>
    </value-pairs>
 
-   <value-pairs value-pairs-name="common_types" dc-term="type">
+   
+	<value-pairs value-pairs-name="type_español" dc-term="type_spa">
+		 <pair>
+			 <displayed-value>Trabajo de Grado</displayed-value>
+			 <stored-value>Trabajo de Grado</stored-value>
+		 </pair>
+	<pair>
+		<displayed-value>Pasantia</displayed-value>
+		<stored-value>Pasantia</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Proyecto de grado</displayed-value>
+		<stored-value>Proyecto de grado</stored-value>
+	</pair>
+	<pair>
+		<displayed-value>Proyecto de emprendimientoo</displayed-value>
+		<stored-value>Proyecto de emprendimiento</stored-value>
+	</pair>
+
+</value-pairs>
+
+	 
+	<value-pairs value-pairs-name="common_types" dc-term="type">
+	<pair>
+		<displayed-value>Trabajo de Grado</displayed-value>
+		<stored-value>Bachelor Thesis</stored-value>
+	</pair> 
+	<pair>
+       <displayed-value>Articulo</displayed-value>
+       <stored-value>Article</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Libro</displayed-value>
+       <stored-value>Book</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Articulo de Libro</displayed-value>
+       <stored-value>Bookpart</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Objeto de Aprendizaje</displayed-value>
+       <stored-value>Learning Object</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Documento de Conferencia</displayed-value>
+       <stored-value>Conference Paper</stored-value>
+     </pair>
+
+	 <pair>
+       <displayed-value>Poster Conferencia</displayed-value>
+       <stored-value>stored Conference Poster</stored-value>
+     </pair>
+	 <pair>
+
+       <displayed-value>Documento Historico</displayed-value>
+       <stored-value>Historical Document</stored-value>
+     </pair>	
+
+	 <pair>
+       <displayed-value>Disertaciones</displayed-value>
+       <stored-value>Doctoral Thesis</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Imagen</displayed-value>
+       <stored-value>Image</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Revista</displayed-value>
+       <stored-value>Journal</stored-value>
+     </pair>	
+	
+	 <pair>
+       <displayed-value>Mapa</displayed-value>
+       <stored-value>Map</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Tesis</displayed-value>
+       <stored-value>Tesis</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Patente</displayed-value>
+       <stored-value>Patent</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Literatura Gris</displayed-value>
+       <stored-value>Preprints</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Presentacion</displayed-value>
+       <stored-value>Presentation</stored-value>
+     </pair>	
+	 <pair>
+
+       <displayed-value>Reporte</displayed-value>
+       <stored-value>Report</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Simulacion</displayed-value>
+       <stored-value>Review</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Sonido</displayed-value>
+       <stored-value>Sound</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Video</displayed-value>
+       <stored-value>Video</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Documento de Trabajo</displayed-value>
+       <stored-value>Workong paper</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Documento Institucional</displayed-value>
+       <stored-value>Institucional Document</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Manuscrito</displayed-value>
+       <stored-value>Manuscripts</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Diario</displayed-value>
+       <stored-value>Newspaper</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Software</displayed-value>
+       <stored-value>Software</stored-value>
+     </pair>	
+	 <pair>
+       <displayed-value>Partitura</displayed-value>
+       <stored-value>Partitura</stored-value>
+     </pair>	
+	 
+</value-pairs>
+	
+	<value-pairs value-pairs-name="common_types ori" dc-term="type">
      <pair>
        <displayed-value>Animation</displayed-value>
        <stored-value>Animation</stored-value>
@@ -354,7 +950,18 @@ it, please enter the types and the actual numbers or codes.</hint>
    <!-- default language order: (from dspace 1.2.1)
         "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
      -->
-   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+	<value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+     <pair>
+       <displayed-value>Espanol</displayed-value>
+       <stored-value>es_CO</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Ingles</displayed-value>
+       <stored-value>en_US</stored-value>
+      </pair>
+	</value-pairs>
+	
+	<value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value></stored-value>
