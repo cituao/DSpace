@@ -16,6 +16,39 @@
  <form-map>
    <name-map collection-handle="default" form-name="traditional" />
    <name-map collection-handle="tesis-car" form-name="tesis" />
+   <name-map collection-handle="10614/469" form-name="tesis" />
+   <name-map collection-handle="10614/445" form-name="tesis" />
+   <name-map collection-handle="10614/466" form-name="tesis" />
+   <name-map collection-handle="10614/574" form-name="tesis" />
+   <name-map collection-handle="10614/599" form-name="tesis" />
+   <name-map collection-handle="10614/561" form-name="tesis" />
+   <name-map collection-handle="10614/271" form-name="tesis" />
+   <name-map collection-handle="10614/491" form-name="tesis" />
+   <name-map collection-handle="10614/303" form-name="tesis" />
+   <name-map collection-handle="10614/301" form-name="tesis" />
+   <name-map collection-handle="10614/315" form-name="tesis" />
+   <name-map collection-handle="10614/327" form-name="tesis" />
+   <name-map collection-handle="10614/344" form-name="tesis" />
+   <name-map collection-handle="10614/391" form-name="tesis" />
+   <name-map collection-handle="10614/411" form-name="tesis" />
+   <name-map collection-handle="10614/428" form-name="tesis" />
+   <name-map collection-handle="10614/509" form-name="tesis" />
+   <name-map collection-handle="10614/813" form-name="tesis" />
+   <name-map collection-handle="10614/2929" form-name="tesis" />
+   <name-map collection-handle="10614/2471" form-name="tesis" />
+   <name-map collection-handle="10614/2965" form-name="tesis" />
+   <name-map collection-handle="10614/2563" form-name="tesis" />
+   <name-map collection-handle="10614/1962" form-name="tesis" />
+   <name-map collection-handle="10614/798" form-name="tesis" />
+   <name-map collection-handle="10614/795" form-name="tesis" />
+   <name-map collection-handle="10614/797" form-name="tesis" />
+   <name-map collection-handle="10614/5222" form-name="tesis" />
+   <name-map collection-handle="10614/5270" form-name="tesis" />
+   <name-map collection-handle="10614/5272" form-name="tesis" />
+   <name-map collection-handle="10614/5946" form-name="tesis" />
+   <name-map collection-handle="10614/5720" form-name="tesis" />
+   <name-map collection-handle="10614/5077" form-name="tesis" />
+   <name-map collection-handle="10614/5341" form-name="tesis" />
  </form-map>
 
 
