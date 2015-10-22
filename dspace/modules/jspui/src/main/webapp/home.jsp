@@ -65,7 +65,9 @@
         <%= topNews %>
 	</div>-->
     <!-- Banner encabezado, transladado de header-default /  sólo aparece en el HOME -->
-    <div class="container banner">
+    <div  id="banner">
+    
+    <img  id="cumpleLogo" src="<%= request.getContextPath() %>/image/40anos.svg" alt="DSpace logo" />
     <div class="row">
     <iframe src="<%= request.getContextPath() %>/wideView/index.html" frameborder="0" scrolling="no" id="iframe">
        <div class="col-md-9 brand">
@@ -244,6 +246,15 @@ if (communities != null && communities.length != 0)
         
              
             var breadcrumb = document.getElementsByClassName('breadcrumb')[0];
+            var banner = document.getElementById('banner');
+            var bannerParent = banner.parentNode;
+            var bannerLeftMargin , bannerLeftPadding, sustraccion; 
+            
+            banner.style.width = window.innerWidth - 16 + "px";
+            bannerLeftMargin= $(bannerParent).css('margin-left').replace("px", "");
+            bannerLeftPadding = $(bannerParent).css('padding-left').replace("px", "");
+            sustraccion= Number(bannerLeftMargin) + Number(bannerLeftPadding);
+            banner.style.marginLeft = (-1 * sustraccion - 1) + "px";
             breadcrumb.style.display= "none";
             
             /*Displays colums for home discovery */
@@ -272,7 +283,12 @@ if (communities != null && communities.length != 0)
                
              
              window.onresize = function(){
-             discoveryHomeDisplay();
+                banner.style.width = window.innerWidth - 16 + "px";
+                bannerLeftMargin= $(bannerParent).css('margin-left').replace("px", "");
+                bannerLeftPadding = $(bannerParent).css('padding-left').replace("px", "");
+                sustraccion= Number(bannerLeftMargin) + Number(bannerLeftPadding);
+                banner.style.marginLeft = (-1 * sustraccion - 1) + "px";
+                discoveryHomeDisplay();
              }
             
         </script>

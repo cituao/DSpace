@@ -83,7 +83,9 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
+           <a href="<%= request.getContextPath() %>/">
            <img class="pull-left REDicon"  src="<%= request.getContextPath() %>/image/REDicon.svg"/>
+           </a>
          <a class="navbar-brand" id="logotype" href="<%= request.getContextPath() %>/"><h1 id="headerTextH1">Repositorio Educativo Digital</h1><h2 id="headerTextH2">Universidad Autónoma de Occidente</h2></a>
        </div>
        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="gralOpts">
@@ -117,7 +119,7 @@
             </ul>
           </li><!-- BROWSE ! -->
 
-          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") %>"><img id="helpIconWhite" src="<%= request.getContextPath() %>/image/helpIconw.png" style="float:left"><img id="helpIconBlack" src="<%= request.getContextPath() %>/image/helpIcon.png" style="float:left"><div id="helpText" style="margin-left:20px;"><fmt:message  key="jsp.layout.navbar-default.help"/></div></dspace:popup></li>
+          <li class="<%= ( currentPage.endsWith( "/help" ) ? "active" : "" ) %>"><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.index\") %>"><!--<img id="helpIconWhite" src="<%= request.getContextPath() %>/image/helpIconw.png" style="float:left">--><img id="helpIconBlack" src="<%= request.getContextPath() %>/image/helpIcon.png" style="float:left"><div id="helpText" ><fmt:message  key="jsp.layout.navbar-default.help"/></div></dspace:popup></li>
        </ul>
 
  <% if (supportedLocales != null && supportedLocales.length > 1)
@@ -126,7 +128,7 @@
     <div class="nav navbar-nav">
 	 <ul class="nav navbar-nav">
       <li class="dropdown">
-       <a href="#" class="dropdown-toggle" id="languageBtn" data-toggle="dropdown" ><fmt:message key="jsp.layout.navbar-default.language"/><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIconN.png"/><!--<b class="caret"></b>--></a>
+       <a href="#" class="dropdown-toggle" style="margin-left:13px" id="languageBtn" data-toggle="dropdown" ><fmt:message key="jsp.layout.navbar-default.language"/><img  class="dropdownIcon" src="<%= request.getContextPath() %>/image/dropdownIconN.png"/><!--<b class="caret"></b>--></a>
         <ul class="dropdown-menu">
  <%
     for (int i = supportedLocales.length-1; i >= 0; i--)

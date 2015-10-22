@@ -12,7 +12,7 @@
         function myFunction() {
         var containerFilters;
         containerFilters = document.getElementsByClassName('container')[3].setAttribute("id", "containerFilter");
-         var columnaInfo = document.getElementsByClassName('col-md-9')[0].setAttribute("id", "columnFilter");;
+        /* var columnaInfo = document.getElementsByClassName('col-md-9')[0].setAttribute("id", "columnFilter");*/
         }
         myFunction();
     </script>
