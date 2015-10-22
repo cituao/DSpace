@@ -331,8 +331,7 @@ box-sizing: content-box;
 }
 
 .contentContainer{
-    display: flex;
-    flex-flow: row wrap;
+   
     margin-top: 40px;
     position: relative;
 }
@@ -756,6 +755,10 @@ width: 33px;
 }
 #communities-list{
     margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
 }
 
 .communityItem{ 
