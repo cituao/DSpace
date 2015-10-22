@@ -250,7 +250,7 @@ if (communities != null && communities.length != 0)
             var bannerParent = banner.parentNode;
             var bannerLeftMargin , bannerLeftPadding, sustraccion; 
             
-            banner.style.width = window.innerWidth - 16 + "px";
+            banner.style.width = window.outerWidth  + "px";
             bannerLeftMargin= $(bannerParent).css('margin-left').replace("px", "");
             bannerLeftPadding = $(bannerParent).css('padding-left').replace("px", "");
             sustraccion= Number(bannerLeftMargin) + Number(bannerLeftPadding);
@@ -283,7 +283,7 @@ if (communities != null && communities.length != 0)
                
              
              window.onresize = function(){
-                banner.style.width = window.innerWidth - 16 + "px";
+                banner.style.width = window.outerWidth + "px";
                 bannerLeftMargin= $(bannerParent).css('margin-left').replace("px", "");
                 bannerLeftPadding = $(bannerParent).css('padding-left').replace("px", "");
                 sustraccion= Number(bannerLeftMargin) + Number(bannerLeftPadding);
