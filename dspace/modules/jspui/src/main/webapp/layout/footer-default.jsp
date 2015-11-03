@@ -64,9 +64,9 @@ www.uao.edu.co<br>
 01 800091 34 35</div>
             
                 <div class="footerBox" style="border:none">
-                <a href=""><img class="socialIcon" src="<%= request.getContextPath() %>/image/facebook.svg" /></a>
-                    <a href=""><img class="socialIcon" src="<%= request.getContextPath() %>/image/twitter.svg" /></a>
-                   <a href=""> <img class="socialIcon" src="<%= request.getContextPath() %>/image/youtube.svg" /></a>
+                <a target="_blank" href="https://www.facebook.com/BibliotecaUAOCali/?ref=hl"><img class="socialIcon" src="<%= request.getContextPath() %>/image/facebook.svg" /></a>
+                    <a target="_blank" href="https://twitter.com/biblioUAO"><img class="socialIcon" src="<%= request.getContextPath() %>/image/twitter.svg" /></a>
+                   <a target="_blank" href="https://www.youtube.com/user/bibliotecauao"> <img class="socialIcon" src="<%= request.getContextPath() %>/image/youtube.svg" /></a>
                 </div>
                 
                
