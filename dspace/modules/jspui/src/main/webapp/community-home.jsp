@@ -113,7 +113,7 @@
    
 		 <div class="panel panel-warning">
              <div class="panel-heading">
-                 <h3 class="white"><fmt:message key="jsp.admintools"/>
+                 <h3><fmt:message key="jsp.admintools"/>
              	<span class="white">
              		<dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.site-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup>
              	</span>
@@ -327,7 +327,7 @@
 	{ %>
 
         <div class="panel panel-primary">        
-        <div id="recent-submissions-carousel" class="panel-heading carousel slide">
+        <div id="recent-submissions-carousel" class="carousel slide">
         <%-- Recently Submitted items --%>
 			<h3><fmt:message key="jsp.community-home.recentsub"/>
 <%

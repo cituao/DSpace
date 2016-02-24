@@ -72,7 +72,7 @@ background-color: #D4D4D4;
 .btn-primary {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
-    background-color: #e12021;
+    background-color: #c13227;
     font-size: 14px;
     -webkit-transition: background-color 0.5s ease;
     transition:background-color 0.5s ease;
@@ -85,7 +85,7 @@ background-color: #ff4f50;
 
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #e12021;
+  background-color: #c13227;
 
 }
 
@@ -131,7 +131,7 @@ background-color: #ff4f50;
     
 }
 .btn-danger:hover {
-background-color: #e12021;
+background-color: #c13227;
 }
 
 .btn-danger:active,

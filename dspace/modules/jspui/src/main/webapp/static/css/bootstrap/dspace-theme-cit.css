@@ -15,8 +15,8 @@
 .brand {height: auto;}
 }
 .brand h4 {color: #999999}
-ol.breadcrumb li { font-family: Cabin; color: white; font-style: italic;}
-ol.breadcrumb li a {color:#cfd0d4; font-size: 15px; font-style:italic;}
+ol.breadcrumb li { font-family: Cabin; color: white;}
+ol.breadcrumb li a {color:#AFB0B6; font-size: 15px;}
 ol.breadcrumb li a:hover {color:#606060; }
 body.undernavigation {overflow-x: hidden; padding-top: 50px;} /****************/
 #content {padding-bottom:212px;}

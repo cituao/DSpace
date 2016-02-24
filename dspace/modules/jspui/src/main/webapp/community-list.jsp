@@ -152,9 +152,9 @@
         
                         <div class="panel panel-warning"  style="width: 275px;">
                         <div class="panel-heading">
-                            <h3 class="white">
+                            <h3>
                                 <fmt:message key="jsp.admintools"/>
-                                <span class="white">
+                                <span>
                                     <dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.site-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup>
                                 </span>
                                 </h3>

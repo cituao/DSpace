@@ -175,7 +175,7 @@
         { %>
       
             <div class="panel panel-warning">
-            	<div class="panel-heading"><h3 class="white"><fmt:message key="jsp.admintools"/></h3></div>
+            	<div class="panel-heading"><h3><fmt:message key="jsp.admintools"/></h3></div>
             	<div class="panel-body">
                 <form method="get" action="<%= request.getContextPath() %>/tools/edit-item">
                     <input type="hidden" name="item_id" value="<%= item.getID() %>" />

@@ -155,7 +155,7 @@
 <% if(admin_button || editor_button ) { %>
                  <div class="panel panel-warning">
                  <div class="panel-heading">
-                     <h3 class="white">
+                     <h3>
                      <fmt:message key="jsp.admintools"/>
                  	<span ><dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"help.collection-admin\")%>"><fmt:message key="jsp.adminhelp"/></dspace:popup></span>
                      </h3>

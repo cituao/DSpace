@@ -83,7 +83,7 @@
 	    %>
         <!--<div id="facet_<%= f %>" class="facet col-md-<%= discovery_facet_cols %>"> old -->
     <div id="facet_<%= f %>" class="facet">
-	    <h4 class="facetName sideInput"><fmt:message key="<%= fkey %>" /><img  id="dropdownIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropdownIcon.png"/><img  id="dropupIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropupIcon.png"/></h4>
+	    <h4 class="facetName sideInput"><fmt:message key="<%= fkey %>" /><img  id="dropdownIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropdownIconN.png"/><img  id="dropupIcon" class="pull-right" src="<%= request.getContextPath() %>/image/dropupIconN.png"/></h4>
 	    <ul  id="facet-list-group"><%
 	    int idx = 1;
 	    int currFp = UIUtil.getIntParameter(request, f+"_page"); 
