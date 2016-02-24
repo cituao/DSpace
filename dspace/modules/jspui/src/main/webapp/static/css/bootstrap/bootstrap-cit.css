@@ -275,7 +275,7 @@ margin-bottom: 20px;
 
 .suscribeContainer{
 background-color: #F4F4F4;
-padding: 25px 10px;
+padding: 25px 24px;
     margin-top: -30px;
 }
 .well {
@@ -771,7 +771,7 @@ width: 33px;
 
 .communityItem h3{
     padding-bottom: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .communityItemImg{
@@ -1793,7 +1793,7 @@ justify-content: space-between;
 .row {
   margin-right: 0px;
   margin-left: 0px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 .row:before,
@@ -2432,7 +2432,7 @@ th {
     color: #c13227;
     font-family: 'Libre Baskerville', serif;
     
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     padding-bottom: 15px;
 
@@ -5512,7 +5512,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .listContainer h1{
     line-height: 50px;
     margin-top: -4px;
-    margin-bottom: 45px;
+    margin-bottom: 38px;
     border-bottom: 1px solid #d4d5d9;
     font-size: 25px;
 }
@@ -5806,7 +5806,7 @@ background-color: #d4d5d9;
 
     .communityItem h3{
         padding-bottom: 8px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .communityItemImg{
@@ -7033,7 +7033,6 @@ a.list-group-item:focus {
 }
 
 .panel {
-  margin-bottom: 10px;
   background-color: #ffffff;
   border: none;
  /* -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -7131,7 +7130,7 @@ margin-top: 5px;
 
 .panel-heading {
     
-  padding: 12px 20px;
+  padding: 5px 20px;
   border-bottom: 1px solid transparent;
   
     height: auto;
@@ -7299,7 +7298,7 @@ margin-top: 6px;
   border-bottom-color: #bce8f1;
 }
 #recent-submissions-carousel{
-margin-top: 32px;
+margin-top: 5px;
 }
 
 
@@ -7349,9 +7348,9 @@ margin: 0 !important;
 
 .listContainer{
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
    /* min-height: 494px;*/
-    margin-top: 15px;
+    margin-top: 28px;
 }
 
 .close {
