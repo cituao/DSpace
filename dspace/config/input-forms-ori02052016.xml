@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!DOCTYPE input-forms SYSTEM "input-forms.dtd">
 
 
@@ -49,10 +49,6 @@
    <name-map collection-handle="10614/5720" form-name="tesis" />
    <name-map collection-handle="10614/5077" form-name="tesis" />
    <name-map collection-handle="10614/5341" form-name="tesis" />
-   <name-map collection-handle="10614/5831" form-name="tesis" />
-   <name-map collection-handle="10614/5845" form-name="tesis" />
-   <name-map collection-handle="10614/5831" form-name="tesis" />
-   <name-map collection-handle="10614/5845" form-name="tesis" />
  </form-map>
 
 
@@ -383,11 +379,11 @@ it, please enter the types and the actual numbers or codes.</hint>
 			<hint>
 				EL AUTOR autoriza a la Universidad Autónoma de Occidente, de forma indefinida,  para que en los términos establecidos en la Ley 23 de 1982, 
 				la Ley 44 de 1993, la Decisión andina 351 de 1993, el Decreto 460 de 1995 y demás leyes y jurisprudencia vigente al respecto, 
-				haga publicación de este con fines educativos. PARAGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material, 
+				haga publicación de este con fines educativos. PARÁGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material, 
 				también para formato digital, electrónico, virtual, para usos en red, Internet, extranet, intranet, biblioteca digital y demás para cualquier formato conocido o por conocer.
 				EL AUTOR, expresa que el documento (trabajo de grado, pasantía, casos o tesis) objeto de la presente autorización es original y 
 				la elaboró sin quebrantar ni suplantar los derechos de autor de terceros, y de tal forma, el documento (trabajo de grado, pasantía, casos o tesis) 
-				es de su exclusiva autoría y tiene la titularidad sobre éste. PARAGRAFO: en caso de presentarse alguna reclamación o acción por parte de un tercero, 
+				es de su exclusiva autoría y tiene la titularidad sobre éste. PARÁGRADO: en caso de presentarse alguna reclamación o acción por parte de un tercero, 
 				referente a los derechos de autor sobre el documento (Trabajo de grado, Pasantía, casos o tesis) en cuestión, EL AUTOR, asumirá la responsabilidad total, 
 				y saldrá en defensa de los derechos aquí autorizados; para todos los efectos, la Universidad  Autónoma de Occidente actúa como un tercero de buena fe.
 				Toda persona que consulte ya sea en la biblioteca o en medio electrónico podrá copiar apartes del texto citando siempre la fuente, es decir el título del trabajo y el autor. 
@@ -554,11 +550,6 @@ it, please enter the types and the actual numbers or codes.</hint>
 			 <displayed-value>Administración de Empresas</displayed-value>
 			 <stored-value>Administración de Empresas</stored-value>
 		 </pair>
-
-		<pair>
-			 <displayed-value>Administración Ambiental</displayed-value>
-			 <stored-value>Administración Ambiental</stored-value>
-		 </pair>
 	<pair>
 		<displayed-value>Administración de Empresas Modalidad Dual</displayed-value>
 		<stored-value>Administración de Empresas Modalidad Dual</stored-value>
@@ -688,11 +679,11 @@ it, please enter the types and the actual numbers or codes.</hint>
 			 <stored-value>
 				 EL AUTOR autoriza a la Universidad Autónoma de Occidente, de forma indefinida,  para que en los términos establecidos en la Ley 23 de 1982,
 				 la Ley 44 de 1993, la Decisión andina 351 de 1993, el Decreto 460 de 1995 y demás leyes y jurisprudencia vigente al respecto,
-				 haga publicación de este con fines educativos. PARAGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material,
+				 haga publicación de este con fines educativos. PARÁGRAFO: Esta autorización además de ser válida para las facultades y derechos de uso sobre la obra en formato o soporte material,
 				 también para formato digital, electrónico, virtual, para usos en red, Internet, extranet, intranet, biblioteca digital y demás para cualquier formato conocido o por conocer.
 				 EL AUTOR, expresa que el documento (trabajo de grado, pasantía, casos o tesis) objeto de la presente autorización es original y
 				 la elaboró sin quebrantar ni suplantar los derechos de autor de terceros, y de tal forma, el documento (trabajo de grado, pasantía, casos o tesis)
-				 es de su exclusiva autoría y tiene la titularidad sobre éste. PARAGRAFO: en caso de presentarse alguna reclamación o acción por parte de un tercero,
+				 es de su exclusiva autoría y tiene la titularidad sobre éste. PARÁGRADO: en caso de presentarse alguna reclamación o acción por parte de un tercero,
 				 referente a los derechos de autor sobre el documento (Trabajo de grado, Pasantía, casos o tesis) en cuestión, EL AUTOR, asumirá la responsabilidad total,
 				 y saldrá en defensa de los derechos aquí autorizados; para todos los efectos, la Universidad  Autónoma de Occidente actúa como un tercero de buena fe.
 				 Toda persona que consulte ya sea en la biblioteca o en medio electrónico podrá copiar apartes del texto citando siempre la fuente, es decir el título del trabajo y el autor.
@@ -736,15 +727,6 @@ it, please enter the types and the actual numbers or codes.</hint>
 			 <displayed-value>Trabajo de Grado</displayed-value>
 			 <stored-value>Trabajo de Grado</stored-value>
 		 </pair>
-
-		<pair>
-			 <displayed-value>Trabajo de grado Maestría</displayed-value>
-			 <stored-value>Master Thesis</stored-value>
-		 </pair>
-		<pair>
-			 <displayed-value>Tesis Doctoral</displayed-value>
-			 <stored-value>Doctoral Thesis</stored-value>
-		 </pair>		 
 	<pair>
 		<displayed-value>Pasantia</displayed-value>
 		<stored-value>Pasantia</stored-value>
